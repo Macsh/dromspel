@@ -11,6 +11,8 @@
 		AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A3B2727E9EF0072A72E /* ContentView.swift */; };
 		AC603A3E2727E9F20072A72E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC603A3D2727E9F20072A72E /* Assets.xcassets */; };
 		AC603A412727E9F20072A72E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC603A402727E9F20072A72E /* Preview Assets.xcassets */; };
+		AC603A492727EC690072A72E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A482727EC690072A72E /* Models.swift */; };
+		AC603A4B2727EC790072A72E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A4A2727EC790072A72E /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		AC603A3B2727E9EF0072A72E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC603A3D2727E9F20072A72E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC603A402727E9F20072A72E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC603A482727EC690072A72E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		AC603A4A2727EC790072A72E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,9 @@
 		AC603A382727E9EF0072A72E /* dromspiel */ = {
 			isa = PBXGroup;
 			children = (
+				AC603A4D2727EC990072A72E /* Screens */,
+				AC603A4C2727EC800072A72E /* Extracted Views */,
+				AC603A472727EC370072A72E /* Data */,
 				AC603A392727E9EF0072A72E /* dromspielApp.swift */,
 				AC603A3B2727E9EF0072A72E /* ContentView.swift */,
 				AC603A3D2727E9F20072A72E /* Assets.xcassets */,
@@ -65,6 +72,29 @@
 				AC603A402727E9F20072A72E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC603A472727EC370072A72E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AC603A482727EC690072A72E /* Models.swift */,
+				AC603A4A2727EC790072A72E /* Database.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AC603A4C2727EC800072A72E /* Extracted Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Extracted Views";
+			sourceTree = "<group>";
+		};
+		AC603A4D2727EC990072A72E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC603A492727EC690072A72E /* Models.swift in Sources */,
 				AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */,
+				AC603A4B2727EC790072A72E /* Database.swift in Sources */,
 				AC603A3A2727E9EF0072A72E /* dromspielApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
