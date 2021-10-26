@@ -10,7 +10,7 @@ import SwiftUI
 struct GameScreen: View {
     var game: Game
     var body: some View {
-        VStack{
+        ScrollView{
                     Spacer()
                     Text(game.name)
                     Spacer()

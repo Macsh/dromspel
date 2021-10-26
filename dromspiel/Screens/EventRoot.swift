@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct EventRoot: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
 
-struct EventRoot_Previews: PreviewProvider {
-    static var previews: some View {
-        EventRoot()
+    var body: some View {
+
+        NavigationView {
+
+            ScrollView  {
+
+                ForEach(events){event in
+
+                    VStack{
+
+                        NavigationLink(destination: EventScreen(event: event),
+                                       label:{
+                            ListEventRow(event: event)
+                        })
+                    }
+                }
+                .navigationBarTitle("Events")
+
+            }
+
+        }
     }
 }

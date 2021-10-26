@@ -35,6 +35,7 @@ struct ListGameRow: View {
                 }
             }
             .padding(.horizontal)
+            .frame(height: 70)
         }
 }
 

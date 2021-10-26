@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AC07C2D8272833A400DE778D /* EventScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07C2D7272833A400DE778D /* EventScreen.swift */; };
+		AC07C2DD2728449200DE778D /* VideoPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07C2DC2728449200DE778D /* VideoPlayerGame.swift */; };
+		AC07C2DF272846DB00DE778D /* ListEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07C2DE272846DB00DE778D /* ListEventRow.swift */; };
 		AC603A3A2727E9EF0072A72E /* dromspielApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A392727E9EF0072A72E /* dromspielApp.swift */; };
 		AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A3B2727E9EF0072A72E /* ContentView.swift */; };
 		AC603A3E2727E9F20072A72E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC603A3D2727E9F20072A72E /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		AC07C2D7272833A400DE778D /* EventScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScreen.swift; sourceTree = "<group>"; };
+		AC07C2DC2728449200DE778D /* VideoPlayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerGame.swift; sourceTree = "<group>"; };
+		AC07C2DE272846DB00DE778D /* ListEventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventRow.swift; sourceTree = "<group>"; };
 		AC603A362727E9EF0072A72E /* dromspiel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dromspiel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC603A392727E9EF0072A72E /* dromspielApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dromspielApp.swift; sourceTree = "<group>"; };
 		AC603A3B2727E9EF0072A72E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				AC603A4E2727ED140072A72E /* ListGameRow.swift */,
+				AC07C2DC2728449200DE778D /* VideoPlayerGame.swift */,
+				AC07C2DE272846DB00DE778D /* ListEventRow.swift */,
 			);
 			path = "Extracted Views";
 			sourceTree = "<group>";
@@ -188,8 +194,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC07C2DF272846DB00DE778D /* ListEventRow.swift in Sources */,
 				AC603A4F2727ED140072A72E /* ListGameRow.swift in Sources */,
 				AC603A53272820020072A72E /* GameRoot.swift in Sources */,
+				AC07C2DD2728449200DE778D /* VideoPlayerGame.swift in Sources */,
 				AC603A492727EC690072A72E /* Models.swift in Sources */,
 				AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */,
 				AC603A55272820ED0072A72E /* UserProfile.swift in Sources */,

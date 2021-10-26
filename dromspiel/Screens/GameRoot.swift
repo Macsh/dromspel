@@ -11,15 +11,18 @@ struct GameRoot: View {
     var body: some View {
         NavigationView{
         ScrollView  {
+            
             ForEach(games){game in
-                VStack{
+                Spacer(minLength: 50)
                     NavigationLink(destination: GameScreen(game: game),
                                    label:{
                         ListGameRow(game: game)
+                            
                     })
-                }
+                
             }
-            .navigationBarTitle("Commercants")
+            
+            .navigationBarTitle("Nos Recommandations").navigationBarTitleDisplayMode(.inline)
         }
         
     }
