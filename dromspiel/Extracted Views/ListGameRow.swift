@@ -7,14 +7,40 @@
 
 import SwiftUI
 
-struct Default: View {
+struct ListGameRow: View {
+    var game: Game
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+            ZStack {
+                Image(self.game.image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 100, alignment: .bottom)
+                        .clipped()
+                        .cornerRadius(12)
+                        .opacity(0.8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                            .stroke((colorScheme == .dark ? .white : .black), lineWidth: 3)
+                            .opacity(1))
+                        
+                        
+                HStack {
+                    VStack (alignment: .center, spacing: 10) {
+                        Text(self.game.name)
+                            .font(.system(size: 20, weight: .heavy))
+                        Text(self.game.type)
+                    }
+                    .foregroundColor(.white)
+                }
+            }
+            .padding(.horizontal)
+        }
 }
 
-struct Default_Previews: PreviewProvider {
+struct ListGameRow_Previews: PreviewProvider {
     static var previews: some View {
-        Default()
+        ListGameRow(game: games[0])
+//            .preferredColorScheme(.dark)
     }
 }

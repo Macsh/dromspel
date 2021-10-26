@@ -12,22 +12,13 @@ struct GameRoot: View {
         NavigationView{
         ScrollView  {
             ForEach(games){game in
-                NavigationLink(destination: GameScreen(game: game),
-                               label:{
-                    Text(game.name)
-                        .background(
-                        Image("elden-ring-art-1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(height: 50))
-                })
-                    .padding()
-                Spacer()
-                    
-                            
-                
+                VStack{
+                    NavigationLink(destination: GameScreen(game: game),
+                                   label:{
+                        ListGameRow(game: game)
+                    })
+                }
             }
-            
             .navigationBarTitle("Commercants")
         }
         
