@@ -9,8 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            ForEach(games){game in
+                NavigationLink(destination: GameScreen(game: game),
+                               label:{
+                    Text(game.name)
+                })
+            }
+            .navigationBarTitle("Nos Recommandations")
+        }
     }
 }
 
