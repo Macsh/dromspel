@@ -13,6 +13,8 @@
 		AC603A412727E9F20072A72E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC603A402727E9F20072A72E /* Preview Assets.xcassets */; };
 		AC603A492727EC690072A72E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A482727EC690072A72E /* Models.swift */; };
 		AC603A4B2727EC790072A72E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A4A2727EC790072A72E /* Database.swift */; };
+		AC603A4F2727ED140072A72E /* Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A4E2727ED140072A72E /* Default.swift */; };
+		AC603A512727ED290072A72E /* ScreenDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A502727ED290072A72E /* ScreenDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		AC603A402727E9F20072A72E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC603A482727EC690072A72E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		AC603A4A2727EC790072A72E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		AC603A4E2727ED140072A72E /* Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Default.swift; sourceTree = "<group>"; };
+		AC603A502727ED290072A72E /* ScreenDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		AC603A4C2727EC800072A72E /* Extracted Views */ = {
 			isa = PBXGroup;
 			children = (
+				AC603A4E2727ED140072A72E /* Default.swift */,
 			);
 			path = "Extracted Views";
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 		AC603A4D2727EC990072A72E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AC603A502727ED290072A72E /* ScreenDefault.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -167,8 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC603A4F2727ED140072A72E /* Default.swift in Sources */,
 				AC603A492727EC690072A72E /* Models.swift in Sources */,
 				AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */,
+				AC603A512727ED290072A72E /* ScreenDefault.swift in Sources */,
 				AC603A4B2727EC790072A72E /* Database.swift in Sources */,
 				AC603A3A2727E9EF0072A72E /* dromspielApp.swift in Sources */,
 			);
