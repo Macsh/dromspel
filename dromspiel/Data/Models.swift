@@ -20,6 +20,16 @@ struct Game: Identifiable, Hashable {
     let price: String
 }
 
+struct Event: Identifiable, Hashable {
+    let id = UUID()
+    let name: String
+    let date: String
+    let image: String
+    let localisation: String
+    let description: String
+    let link: String
+}
+
 enum GameType {
     
     enum Action : String {
