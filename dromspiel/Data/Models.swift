@@ -30,6 +30,17 @@ struct Event: Identifiable, Hashable {
     let link: String
 }
 
+struct User {
+    var gamesList: [Int]
+    var history: [Int]
+    var likedGames: [Int]
+    var dislikedGames: [Int]
+    var preferences : [GameType.Type] //determiner le type
+    var experiences: [Game]
+    var pseudo: String
+    var description: String
+}
+
 enum GameType {
     
     enum Action : String {
