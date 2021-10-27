@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct ThumbButtons: View {
-    
-    let onTap: () -> Void
-    let isUp: Bool
+    //On vérifie quel mode d'affichage on à.
+    @Environment(\.colorScheme) var colorScheme
+    @State var isUp: Bool
+    @ObservedObject var activeUser : User
+    let game: Game
+    let size: Double
     let isValidated: Bool
+    let onTap: () -> Void
     
-    init(onTap: @escaping () -> Void = {}, isUp : Bool = false, isValidated: Bool = false) {
+    init(size: Double = 50, isUp : Bool = false, isValidated: Bool = false, onTap: @escaping () -> Void = {}) {
         self.onTap = onTap
         self.isUp = isUp
         self.isValidated = isValidated
+        self.size = size
     }
     
     var body: some View {
@@ -25,10 +30,10 @@ struct ThumbButtons: View {
                 .foregroundColor(isUp ?
                                  isValidated ? .green : .blue :
                                  isValidated ? .black : .red)
-                .font(.system(size: 50))
+                .font(.system(size: size))
             Image(systemName: isUp ? "hand.thumbsup" :"hand.thumbsdown")
-            .foregroundColor(.white)
-            .font(.system(size: 52))
+                .foregroundColor(colorScheme == .dark ? .white : .black)
+            .font(.system(size: size+2))
             .onTapGesture(perform: onTap)
         }
     }

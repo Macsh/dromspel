@@ -14,7 +14,7 @@ struct GameRoot: View {
             
             ForEach(games){game in
                 Spacer(minLength: 50)
-                    NavigationLink(destination: GameScreen(game: game),
+                NavigationLink(destination: GameScreen(game: game, activeUser: user),
                                    label:{
                         ListGameRow(game: game)
                             

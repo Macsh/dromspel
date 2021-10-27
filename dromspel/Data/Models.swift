@@ -30,16 +30,6 @@ struct Event: Identifiable, Hashable {
     let link: String
 }
 
-struct User {
-    var gamesList: [Int]
-    var history: [Int]
-    var likedGames: [Int]
-    var dislikedGames: [Int]
-    var preferences : [GameType.Type] //determiner le type
-    var experiences: [Game]
-    var pseudo: String
-    var description: String
-}
 
 enum GameType {
     
@@ -118,3 +108,26 @@ enum Pegi: String {
     case pegi_18 = "PEGI 18"
 }
 
+
+//Structure utilisateur
+class User : ObservableObject {
+    @Published var gamesList: [Int] = []
+    var history: [Int] = []
+    @Published var likedGames: [Int] = []
+    @Published var dislikedGames: [Int] = []
+    var preferences : [GameType] = [] //determiner le type
+    var experiences: [Game] = []
+    var pseudo: String = ""
+    var description: String = ""
+    
+    init(gamesList: [Int] = [], history: [Int] = [],likedGames: [Int] = [],dislikedGames: [Int] = [],preferences : [GameType] = [],experiences: [Game] = [],pseudo: String = "",description: String = "") {
+        self.gamesList = gamesList
+        self.history = history
+        self.likedGames = likedGames
+        self.dislikedGames = dislikedGames
+        self.preferences = preferences
+        self.experiences = experiences
+        self.pseudo = pseudo
+        self.description = description
+    }
+}

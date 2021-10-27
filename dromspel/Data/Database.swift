@@ -115,3 +115,6 @@ var events = [
     Event(name: "Polymanga", date: "15/04/2022", image: "polymanga.event", localisation: "2M2C de Montreux Av. Claude-Nobs 5 1820 Montreux", description: "Reportée en 2021 en raison de la crise sanitaire, la 16ème édition de Polymanga se déroulera du 15 au 18 avril 2022. C'est une convention Suisse romande qui se consacre le temps d'un week end à la culture japonaise, aux mangas, aux anime et aux jeux vidéo. Depuis 2012, la convention se déroule tous les ans à Pâques au centre des congrès de Montreux. Pop culture is good: Toute la pop culture, les jeux vidéo et les mangas dans un cadre novateur et bienveillant pour un Polymanga qui se renouvelle en profondeur.", link: "https://www.polymanga.com")
 
 ]
+
+
+var user = User(gamesList: [1,2], history: [2, 1, 3], likedGames: [], dislikedGames: [], preferences: [], experiences: [], pseudo: "Joseph", description: "C'est un utilisateur")
