@@ -22,7 +22,7 @@ struct ContentView: View {
                     Text("Evènements")
                 }
             
-            MyList()
+            MyList(user: user)
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Liste Jeux")

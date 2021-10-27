@@ -39,7 +39,7 @@ enum GameType {
         case combat = "Combat"
         case BTA = "Beat'em up"
         case survie = "Survie"
-        case rhythm = "Rhythme"
+        case rhythm = "Rythme"
         case battleRoyale = "Battle Royale"
         case FPS = "FPS"
         case TPS = "TPS"

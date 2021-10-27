@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GameScreen: View {
     var game: Game
-    @State var isInList = false
     @ObservedObject var activeUser: User
     var body: some View {
         ZStack {
@@ -18,10 +17,10 @@ struct GameScreen: View {
                 VideoPlayerGame(game: game)
                         Spacer()
                     HStack {
-                        ThumbButtons(size: 30, isUp: true)
-                            .padding(7)
-                        ThumbButtons(size: 30)
-                            .padding(7)
+//                        ThumbButtons(size: 30, isUp: true)
+//                            .padding(7)
+//                        ThumbButtons(size: 30)
+//                            .padding(7)
                         Spacer()
                             .frame(width: 50)
                         
@@ -46,9 +45,6 @@ struct GameScreen: View {
         )
     }
     
-    func isGameInList() {
-        
-    }
 }
 
 struct GameScreen_Previews: PreviewProvider {
