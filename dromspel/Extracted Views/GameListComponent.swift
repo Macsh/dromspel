@@ -19,6 +19,9 @@ struct GameListComponent: View {
         NavigationLink(destination: GameScreen(game: game, activeUser: activeUser)) {
             HStack {
                 Image(game.image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: 60)
                 Text(game.name)
                     .foregroundColor(colorScheme == .dark ? .white : .black)
                 Spacer()

@@ -50,6 +50,8 @@ struct MyList: View {
                     }
                 }
             }
+            .navigationBarTitle(Text(selection == ListState.list ? "Ma liste" : "Historique"), displayMode: .inline)
+
         }
     }
 }

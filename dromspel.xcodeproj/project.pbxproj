@@ -25,6 +25,7 @@
 		AC603A57272821030072A72E /* EventRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A56272821030072A72E /* EventRoot.swift */; };
 		AC603A59272821170072A72E /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A58272821170072A72E /* MyList.swift */; };
 		ACE5C2F027297E4000CCF4F6 /* GameListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5C2EF27297E4000CCF4F6 /* GameListComponent.swift */; };
+		ACE5C2F42729840600CCF4F6 /* FirstBootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5C2F32729840600CCF4F6 /* FirstBootScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		AC603A56272821030072A72E /* EventRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRoot.swift; sourceTree = "<group>"; };
 		AC603A58272821170072A72E /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
 		ACE5C2EF27297E4000CCF4F6 /* GameListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListComponent.swift; sourceTree = "<group>"; };
+		ACE5C2F32729840600CCF4F6 /* FirstBootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBootScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				AC603A56272821030072A72E /* EventRoot.swift */,
 				AC603A58272821170072A72E /* MyList.swift */,
 				AC07C2D7272833A400DE778D /* EventScreen.swift */,
+				ACE5C2F32729840600CCF4F6 /* FirstBootScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				AC603A53272820020072A72E /* GameRoot.swift in Sources */,
 				AC07C2DD2728449200DE778D /* VideoPlayerGame.swift in Sources */,
 				AC603A492727EC690072A72E /* Models.swift in Sources */,
+				ACE5C2F42729840600CCF4F6 /* FirstBootScreen.swift in Sources */,
 				AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */,
 				AC0B6B8327293A8D00D9271E /* ThumbButtons.swift in Sources */,
 				AC603A55272820ED0072A72E /* UserProfile.swift in Sources */,

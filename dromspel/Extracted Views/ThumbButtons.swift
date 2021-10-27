@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ThumbUp: View {
     @Environment(\.colorScheme) var colorScheme
-    @State var opacityUp: Bool = true
+    @State var opacity: Bool = true
     @State var gameIndex : Int = -1
     @State var isValidated: Bool = false
     @ObservedObject var activeUser : User
@@ -24,7 +24,7 @@ var body: some View {
               .foregroundColor(colorScheme == .dark ? .white : .black)
               .font(.system(size: size+2))
               }
-                .opacity(self.opacityUp ? 1 : 0)
+                .opacity(self.opacity ? 1 : 0)
                 .onTapGesture(perform: {
             if gameIndex != -1 {
                 if !self.isValidated { //Si le jeu est déja dans la liste alors
@@ -42,14 +42,22 @@ var body: some View {
         
         if let gIndex = games.firstIndex(of: self.game) {
             self.gameIndex = gIndex
+            opacity = !activeUser.dislikedGames.contains(gameIndex)
         }
         
         if self.gameIndex == -1 {
             isValidated = false
+            
         }
         else {
             isValidated = (activeUser.likedGames.contains(gameIndex))
         }
+    })
+    /*.onChange(of: activeUser.dislikedGames.contains(gameIndex), perform: { _ in
+    opacity = true
+                })*/
+    .onChange(of: activeUser.dislikedGames, perform: { _ in
+        opacity = activeUser.dislikedGames.contains(gameIndex)
     })
 }
 }
@@ -93,6 +101,7 @@ var body: some View {
                 
                 if let gIndex = games.firstIndex(of: self.game) {
                     self.gameIndex = gIndex
+                    opacity = !activeUser.likedGames.contains(gameIndex)
                 }
                 
                 if self.gameIndex == -1 {
@@ -101,6 +110,9 @@ var body: some View {
                 else {
                     isValidated = (activeUser.dislikedGames.contains(gameIndex))
                 }
+            })
+            .onChange(of: activeUser.likedGames, perform: { _ in
+                opacity = activeUser.likedGames.contains(gameIndex)
             })
           }
 }
@@ -112,7 +124,7 @@ struct ThumbButtons: View {
     @State var opacityUp: Bool = true
     @State var gameIndex : Int = -1
     @State var isValidated: Bool = false
-    @ObservedObject var activeUser : User
+    var activeUser : User
     let game: Game
     let size: Double
     
