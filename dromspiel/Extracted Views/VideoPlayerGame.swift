@@ -12,14 +12,14 @@ import WebKit
 
 
 struct WebView: UIViewRepresentable {
-    
+    var game : Game
     func makeUIView(context: Context) -> WKWebView {
         WKWebView(frame: .zero)
     }
     
     func updateUIView(_ view: WKWebView, context: UIViewRepresentableContext<WebView>) {
         
-        let request = URLRequest(url: URL(string: "https://www.youtube.com/embed/E3Huy2cdih0?playsinline=1")!)
+        let request = URLRequest(url: URL(string: "https://www.youtube.com/embed/\(game.video)?playsinline=1")!)
         
         view.load(request)
         
@@ -43,12 +43,13 @@ struct WebView: UIViewRepresentable {
 //        }
 //    }
 //}
+
 struct VideoPlayerGame: View {
     var game : Game
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         VStack {
-            WebView()
+            WebView(game: game)
                 .frame(height:UIScreen.main.bounds.height*0.25)
                 .cornerRadius(20)
                 .padding()
