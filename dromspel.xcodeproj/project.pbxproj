@@ -12,7 +12,7 @@
 		AC07C2DF272846DB00DE778D /* ListEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07C2DE272846DB00DE778D /* ListEventRow.swift */; };
 		AC0B6B8327293A8D00D9271E /* ThumbButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B6B8227293A8D00D9271E /* ThumbButtons.swift */; };
 		AC0B6B8527293F4700D9271E /* AddRemoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B6B8427293F4700D9271E /* AddRemoveButton.swift */; };
-		AC603A3A2727E9EF0072A72E /* dromspielApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A392727E9EF0072A72E /* dromspielApp.swift */; };
+		AC603A3A2727E9EF0072A72E /* dromspelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A392727E9EF0072A72E /* dromspelApp.swift */; };
 		AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A3B2727E9EF0072A72E /* ContentView.swift */; };
 		AC603A3E2727E9F20072A72E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC603A3D2727E9F20072A72E /* Assets.xcassets */; };
 		AC603A412727E9F20072A72E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC603A402727E9F20072A72E /* Preview Assets.xcassets */; };
@@ -32,8 +32,8 @@
 		AC07C2DE272846DB00DE778D /* ListEventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventRow.swift; sourceTree = "<group>"; };
 		AC0B6B8227293A8D00D9271E /* ThumbButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbButtons.swift; sourceTree = "<group>"; };
 		AC0B6B8427293F4700D9271E /* AddRemoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemoveButton.swift; sourceTree = "<group>"; };
-		AC603A362727E9EF0072A72E /* dromspiel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dromspiel.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC603A392727E9EF0072A72E /* dromspielApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dromspielApp.swift; sourceTree = "<group>"; };
+		AC603A362727E9EF0072A72E /* dromspel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dromspel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC603A392727E9EF0072A72E /* dromspelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dromspelApp.swift; sourceTree = "<group>"; };
 		AC603A3B2727E9EF0072A72E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC603A3D2727E9F20072A72E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC603A402727E9F20072A72E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		AC603A2D2727E9EF0072A72E = {
 			isa = PBXGroup;
 			children = (
-				AC603A382727E9EF0072A72E /* dromspiel */,
+				AC603A382727E9EF0072A72E /* dromspel */,
 				AC603A372727E9EF0072A72E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,23 +69,23 @@
 		AC603A372727E9EF0072A72E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC603A362727E9EF0072A72E /* dromspiel.app */,
+				AC603A362727E9EF0072A72E /* dromspel.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC603A382727E9EF0072A72E /* dromspiel */ = {
+		AC603A382727E9EF0072A72E /* dromspel */ = {
 			isa = PBXGroup;
 			children = (
 				AC603A4D2727EC990072A72E /* Screens */,
 				AC603A4C2727EC800072A72E /* Extracted Views */,
 				AC603A472727EC370072A72E /* Data */,
-				AC603A392727E9EF0072A72E /* dromspielApp.swift */,
+				AC603A392727E9EF0072A72E /* dromspelApp.swift */,
 				AC603A3B2727E9EF0072A72E /* ContentView.swift */,
 				AC603A3D2727E9F20072A72E /* Assets.xcassets */,
 				AC603A3F2727E9F20072A72E /* Preview Content */,
 			);
-			path = dromspiel;
+			path = dromspel;
 			sourceTree = "<group>";
 		};
 		AC603A3F2727E9F20072A72E /* Preview Content */ = {
@@ -133,9 +133,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC603A352727E9EF0072A72E /* dromspiel */ = {
+		AC603A352727E9EF0072A72E /* dromspel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC603A442727E9F20072A72E /* Build configuration list for PBXNativeTarget "dromspiel" */;
+			buildConfigurationList = AC603A442727E9F20072A72E /* Build configuration list for PBXNativeTarget "dromspel" */;
 			buildPhases = (
 				AC603A322727E9EF0072A72E /* Sources */,
 				AC603A332727E9EF0072A72E /* Frameworks */,
@@ -145,9 +145,9 @@
 			);
 			dependencies = (
 			);
-			name = dromspiel;
+			name = dromspel;
 			productName = dromspiel;
-			productReference = AC603A362727E9EF0072A72E /* dromspiel.app */;
+			productReference = AC603A362727E9EF0072A72E /* dromspel.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -165,7 +165,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AC603A312727E9EF0072A72E /* Build configuration list for PBXProject "dromspiel" */;
+			buildConfigurationList = AC603A312727E9EF0072A72E /* Build configuration list for PBXProject "dromspel" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -178,7 +178,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC603A352727E9EF0072A72E /* dromspiel */,
+				AC603A352727E9EF0072A72E /* dromspel */,
 			);
 		};
 /* End PBXProject section */
@@ -213,7 +213,7 @@
 				AC603A57272821030072A72E /* EventRoot.swift in Sources */,
 				AC603A512727ED290072A72E /* GameScreen.swift in Sources */,
 				AC603A4B2727EC790072A72E /* Database.swift in Sources */,
-				AC603A3A2727E9EF0072A72E /* dromspielApp.swift in Sources */,
+				AC603A3A2727E9EF0072A72E /* dromspelApp.swift in Sources */,
 				AC603A59272821170072A72E /* MyList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +400,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC603A312727E9EF0072A72E /* Build configuration list for PBXProject "dromspiel" */ = {
+		AC603A312727E9EF0072A72E /* Build configuration list for PBXProject "dromspel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC603A422727E9F20072A72E /* Debug */,
@@ -409,7 +409,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC603A442727E9F20072A72E /* Build configuration list for PBXNativeTarget "dromspiel" */ = {
+		AC603A442727E9F20072A72E /* Build configuration list for PBXNativeTarget "dromspel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC603A452727E9F20072A72E /* Debug */,
