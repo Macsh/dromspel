@@ -37,9 +37,6 @@ struct ListGameRow: View {
             }
             .padding(.horizontal)
             .frame(height: 70)
-            .onTapGesture {
-                self.activeUser.history.append(4)
-            }
         }
 }
 

@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView() {                     // Declaration de la TabView (TabBar)
-            GameRoot(activeUser: user, game: games[0])                  // Ecran  1 a affiché
+            GameRoot(activeUser: user)                  // Ecran  1 a affiché
                 .tabItem {              // icone et texte lié a l'ecran a afficher
                     Image(systemName: "gamecontroller")
                     Text("Accueil")
