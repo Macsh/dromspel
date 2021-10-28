@@ -43,7 +43,7 @@ struct MyList: View {
                             }
                         }
                         else {
-                            ForEach(activeUser.history , id: \.self) { gameIndex in
+                            ForEach(activeUser.history.reversed() , id: \.self) { gameIndex in
                                 GameListComponent(game : games[gameIndex], gIndex : gameIndex, activeUser: activeUser)
                             }
                         }

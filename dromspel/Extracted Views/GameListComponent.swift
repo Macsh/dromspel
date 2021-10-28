@@ -16,7 +16,7 @@ struct GameListComponent: View {
     @State var activeUser: User
     
     var body: some View {
-        NavigationLink(destination: GameScreen(game: game, activeUser: activeUser)) {
+        NavigationLink(destination: GameScreen(game: game, activeUser: activeUser, gameIndex: 0)) {
             HStack {
                 Image(game.image)
                     .resizable()

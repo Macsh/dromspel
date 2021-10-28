@@ -10,6 +10,7 @@ import SwiftUI
 struct ListGameRow: View {
     var game: Game
     @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var activeUser : User
     var body: some View {
             ZStack {
                 Image(self.game.image)
@@ -36,12 +37,15 @@ struct ListGameRow: View {
             }
             .padding(.horizontal)
             .frame(height: 70)
+            .onTapGesture {
+                self.activeUser.history.append(4)
+            }
         }
 }
 
 struct ListGameRow_Previews: PreviewProvider {
     static var previews: some View {
-        ListGameRow(game: games[0])
+        ListGameRow(game: games[0], activeUser: user)
 //            .preferredColorScheme(.dark)
     }
 }

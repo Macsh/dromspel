@@ -19,11 +19,11 @@ struct RoundedCorner: Shape {
 }
 
 struct SuggestedGames: View {
-    var game: Game
     @Environment(\.colorScheme) var colorScheme
+    var game: Game
     var activeUser: User
     var body: some View {
-        NavigationLink(destination: GameScreen(game: game, activeUser: user)) {
+        ScrollViewReader { proxy in
             ZStack {
                 VStack (spacing: 0){
                     Image(self.game.image)
@@ -57,7 +57,8 @@ struct SuggestedGames: View {
                         .opacity(1))
             }
             .frame(width: 120, height: 150)
-    }
+            
+        }
 }
 }
                         

@@ -112,7 +112,7 @@ enum Pegi: String {
 //Structure utilisateur
 class User : ObservableObject {
     @Published var gamesList: [Int] = []
-    var history: [Int] = []
+    @Published var history: [Int] = []
     @Published var likedGames: [Int] = []
     @Published var dislikedGames: [Int] = []
     var preferences : [GameType] = [] //determiner le type
