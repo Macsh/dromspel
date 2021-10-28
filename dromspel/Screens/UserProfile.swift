@@ -9,7 +9,62 @@ import SwiftUI
 
 struct UserProfile: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+                   Image("background-profile")
+                       .resizable()
+                       .scaledToFill()
+                       .opacity(0.3)
+                   
+                   VStack{
+                       
+                       Image (systemName: "person")
+                           .resizable()
+                           .scaledToFit()
+                           .frame(width: 100)
+                       
+                       
+       //                VStack(alignment: .leading, spacing:6) {
+                       HStack{
+                       Text("Pseudo")
+                           Image(systemName: "pencil.circle")
+                       }
+                       Text("ans")
+                       Text("info")
+                       Text("info")
+                       Button(action: {
+                           
+                       }, label: {
+                           Text("Minis-jeux")
+                           
+                       })
+                           .padding(5)
+                           .background(Color.red)
+                           .foregroundColor(.white)
+                           .cornerRadius(15)
+                       
+                  
+                       
+                       Text("Type de Jeux")
+                           .padding(10)
+                           .frame(width: 600)
+                           .background(Color.black)
+                           .foregroundColor(.white)
+                       
+       //                listStyle(<#T##S#>)
+                   
+                       
+                       Spacer()
+             
+                       
+                       Text("Jeux Préférés")
+                           .padding(10)
+                           .frame(width: 600)
+                           .background(Color.black)
+                           .foregroundColor(.white)
+                       
+                      Spacer()
+                   }
+               }
     }
 }
 

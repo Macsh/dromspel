@@ -7,88 +7,93 @@
 
 import SwiftUI
 
-struct firstBootScreen: View {
+struct FirstBootScreen: View {
     var body: some View {
+        NavigationView {
+            ZStack{
 
-        ZStack{
+                VStack{
 
-            VStack{
+                    Button (action: {
 
-                Button (action: {
-
-                }, label:{
+                    }, label:{
 
 
-                    VStack{
-                        Text ("Sectionnez vos preferences")
+                        VStack{
+                            Text ("Selectionner vos preferences:")
+                                .font(.system(size: 20))
+
+                            HStack{
+
+                                Text("Fight")
+
+                                    .padding(8)
+                                    .foregroundColor(Color.blue)
+                                    .background(Color.white)
+                                    .cornerRadius (9)
+                                Text("Arcade")
+                                    .padding(8)
+                                    .foregroundColor(Color.blue)
+                                    .background(Color.white)
+                                    .cornerRadius (9)
+
+                            }
+HStack{
+
+                                Text("Aventure")
+                                    .padding(8)
+                                    .foregroundColor(Color.blue)
+                                    .background(Color.white)
+                                    .cornerRadius (9)
+                                Text("Simulation")
+                                    .padding(8)
+                                    .foregroundColor(Color.blue)
+                                    .background(Color.white)
+                                    .cornerRadius (9)
+
+
+                            }
+
+                        }
+                        .padding(30)
+                        .foregroundColor(Color.white)
+                        .background(Color.blue)
+                        .cornerRadius(20)
+
+
+                    })
+
+
+                    Spacer().frame(height: 150)
+
+                    Button (action: {
+
+                    }, label: {
+NavigationLink (destination:MiniGameScreen(), label:{
+                            VStack{
+                                Text ("Vous ne savez pas choisir, cliquez ici")
+                                Image (systemName:"gamecontroller.fill")
+
+                            }
                             .font(.system(size: 20))
-
-                    }
-                    .padding(30)
-                    .foregroundColor(Color.white)
-                    .background(Color.blue)
-                    .cornerRadius(20)
-
-
-                })
-
-                Spacer().frame(height: 90)
-
-                HStack{
-
-                    Text("Fight")
-
-                        .padding(8)
-                        .foregroundColor(Color.white)
-                        .background(Color.gray)
-                        .cornerRadius (9)
-                    Text("Arcade")
-                        .padding(8)
-                        .foregroundColor(Color.white)
-                        .background(Color.gray)
-                        .cornerRadius (9)
-                    Text("Aventure")
-                        .padding(8)
-                        .foregroundColor(Color.white)
-                        .background(Color.gray)
-                        .cornerRadius (9)
-                    Text("Simulation")
-                        .padding(8)
-                        .foregroundColor(Color.white)
-                        .background(Color.gray)
-                        .cornerRadius (9)
-
-                }
-Spacer().frame(height: 170)
-
-                Button (action: {
-
-                }, label: {
+                            .padding(30)
+                            .foregroundColor(Color.white)
+                            .background(Color.red)
+                            .cornerRadius(20)
+                        })
 
 
-                    HStack{
-                        Text ("Vous ne savez pas choisir, cliquez ici")
-                            .font(.system(size: 20))
-                    }
-
-                    .padding(30)
-                    .foregroundColor(Color.white)
-                    .background(Color.red)
-                    .cornerRadius(20)
+                    })            }
 
 
-                })            }
-
-
-
+            }
         }
     }
 }
 
 
-
-struct firstBootScreen_Previews: PreviewProvider {
+struct FirstBootScreen_Previews: PreviewProvider {
     static var previews: some View {
-        firstBootScreen()
+        FirstBootScreen()
     }
 }

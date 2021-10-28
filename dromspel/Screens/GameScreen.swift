@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameScreen: View {
-    var game: Game
+    @State var game: Game
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var activeUser: User
     var body: some View {
@@ -17,7 +17,7 @@ struct GameScreen: View {
                 VStack(alignment: .center, spacing: 5){
                 VideoPlayerGame(game: game)
                     HStack {
-                        ThumbButtons(size: 30, activeUser: activeUser, game: game)
+                        ThumbButtons(size: 30, spacing: 20, activeUser: activeUser, game: game)
                         Spacer()
                             .frame(width: 50)
                         
@@ -52,14 +52,42 @@ struct GameScreen: View {
                         .padding()
                     Spacer()
                         .frame(height: 20)
-                    VStack {
-                    Text("Jeux Similaires")
-                        .font(.system(size: 35, weight: .heavy))
-                        
-//                        .frame(width: 9999)
-                        .background(Color(colorScheme == .dark ? .black : .white).opacity(0.5))
-                    }.font(.system(size: 30))
-                        .navigationBarTitle(game.name)
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor((colorScheme == .dark ? .black : .white))
+                            .opacity(0.5)
+                            
+                        VStack {
+                            
+                            
+                        Text("Jeux Similaires")
+                            .font(.system(size: 35, weight: .heavy))
+                            .padding()
+                        }.font(.system(size: 30))
+                            .navigationBarTitle(game.name)
+                    }
+                    
+                    
+                        ScrollView (.horizontal) {
+                            HStack (spacing: 60) {
+                                Spacer(minLength: -30)
+                            SuggestedGames(game:games[0], gameBinding: $game, activeUser: activeUser)
+                                .frame(height: 185)
+                            SuggestedGames(game:games[1], gameBinding: $game, activeUser: activeUser)
+                                .frame(height: 185)
+                            SuggestedGames(game:games[2], gameBinding: $game, activeUser: activeUser)
+                                .frame(height: 185)
+                            SuggestedGames(game:games[3], gameBinding: $game, activeUser: activeUser)
+                                .frame(height: 185)
+                            SuggestedGames(game:games[4], gameBinding: $game, activeUser: activeUser)
+                                .frame(height: 185)
+                            }
+                            .padding()
+                            
+                        }
+                    
+                    
+                    
             }
         }.background(
             Image(game.image)

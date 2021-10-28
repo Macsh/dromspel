@@ -22,7 +22,7 @@ struct GameRoot: View {
                 
             }
             
-            .navigationBarTitle("Nos Recommandations").navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle("Nos Recommandations").navigationBarTitleDisplayMode(.inline).navigationViewStyle(StackNavigationViewStyle())
         }
         
     }

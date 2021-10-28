@@ -15,7 +15,7 @@ struct ListGameRow: View {
                 Image(self.game.image)
                         .resizable()
                         .scaledToFill()
-                        .frame(height: 100, alignment: .bottom)
+                        .frame(height: 100)
                         .clipped()
                         .cornerRadius(12)
                         .opacity(0.8)
