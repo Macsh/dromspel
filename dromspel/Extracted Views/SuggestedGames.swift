@@ -20,11 +20,10 @@ struct RoundedCorner: Shape {
 
 struct SuggestedGames: View {
     var game: Game
-    @Binding var gameBinding: Game
     @Environment(\.colorScheme) var colorScheme
     var activeUser: User
     var body: some View {
-            
+        NavigationLink(destination: GameScreen(game: game, activeUser: user)) {
             ZStack {
                 VStack (spacing: 0){
                     Image(self.game.image)
@@ -58,12 +57,8 @@ struct SuggestedGames: View {
                         .opacity(1))
             }
             .frame(width: 120, height: 150)
-            .onTapGesture {
-                gameBinding = game
-                
-            }
-        
     }
+}
 }
                         
                         
@@ -75,8 +70,7 @@ struct SuggestedGames: View {
                         
                         struct SuggestedGames_Previews: PreviewProvider {
             static var previews: some View {
-                Text("Lalalalalalaaaa")
-//                SuggestedGames(game: games[0], gameBinding: game, activeUser: user)
+                SuggestedGames(game: games[0], activeUser: user)
                             .preferredColorScheme(.dark)
             }
         }

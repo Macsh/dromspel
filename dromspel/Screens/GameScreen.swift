@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameScreen: View {
-    @State var game: Game
+    var game: Game
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var activeUser: User
     var body: some View {
@@ -71,15 +71,15 @@ struct GameScreen: View {
                         ScrollView (.horizontal) {
                             HStack (spacing: 60) {
                                 Spacer(minLength: -30)
-                            SuggestedGames(game:games[0], gameBinding: $game, activeUser: activeUser)
+                            SuggestedGames(game:games[0], activeUser: activeUser)
                                 .frame(height: 185)
-                            SuggestedGames(game:games[1], gameBinding: $game, activeUser: activeUser)
+                            SuggestedGames(game:games[1], activeUser: activeUser)
                                 .frame(height: 185)
-                            SuggestedGames(game:games[2], gameBinding: $game, activeUser: activeUser)
+                            SuggestedGames(game:games[2], activeUser: activeUser)
                                 .frame(height: 185)
-                            SuggestedGames(game:games[3], gameBinding: $game, activeUser: activeUser)
+                            SuggestedGames(game:games[3], activeUser: activeUser)
                                 .frame(height: 185)
-                            SuggestedGames(game:games[4], gameBinding: $game, activeUser: activeUser)
+                            SuggestedGames(game:games[4], activeUser: activeUser)
                                 .frame(height: 185)
                             }
                             .padding()

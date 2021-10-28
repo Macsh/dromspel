@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct GameRoot: View {
+    @Binding var showNavigation: Bool
     var body: some View {
         NavigationView{
         ScrollView  {
             
             ForEach(games){game in
                 Spacer(minLength: 50)
-                NavigationLink(destination: GameScreen(game: game, activeUser: user),
+                NavigationLink(destination: GameScreen(game: game, activeUser: user), isActive: $showNavigation,
                                    label:{
                         ListGameRow(game: game)
                             
@@ -31,6 +32,6 @@ struct GameRoot: View {
 
 struct GameRoot_Previews: PreviewProvider {
     static var previews: some View {
-        GameRoot()
+        GameRoot(showNavigation: .constant(true))
     }
 }

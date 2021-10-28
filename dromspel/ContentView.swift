@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var activeView: Int = 0
+    @State var showNavigation: Bool = false
     var body: some View {
-        TabView() {                     // Declaration de la TabView (TabBar)
-            GameRoot()                  // Ecran  1 a affiché
+        TabView(selection: Binding<Int>(
+            get: {
+                activeView
+            }, set: {
+                activeView = $0
+                showNavigation = false //<< when pressing Tab Bar Reset Navigation View
+            })) {                     // Declaration de la TabView (TabBar)
+                GameRoot(showNavigation: $showNavigation)                  // Ecran  1 a affiché
                 .tabItem {              // icone et texte lié a l'ecran a afficher
                     Image(systemName: "gamecontroller")
                     Text("Accueil")
