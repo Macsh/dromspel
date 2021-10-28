@@ -12,7 +12,6 @@ struct GameScreen: View {
     @State var game: Game
     @State var topID = 0
     @ObservedObject var activeUser: User
-    var gameIndex : Int
     var body: some View {
         ZStack {
             ScrollView { 
@@ -124,7 +123,7 @@ struct GameScreen: View {
 
 struct GameScreen_Previews: PreviewProvider {
     static var previews: some View {
-        GameScreen(game: games[0], activeUser : user, gameIndex: 0)
+        GameScreen(game: games[0], activeUser : user)
                     .preferredColorScheme(.dark)
     }
 }
