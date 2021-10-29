@@ -49,6 +49,7 @@ struct ListGameRowCalendar: View {
                 }
 
                 .padding(.horizontal)
+                .frame(height: 70)
             }
         }
         }

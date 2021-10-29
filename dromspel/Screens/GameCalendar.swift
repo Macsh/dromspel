@@ -179,20 +179,26 @@ struct GameCalendar: View {
                         if !(key != "" && (dateForComparison.compareDates(date: currentDate) <= 0)) {
                             let toAff = key == "" ? "Disponible prochainement" : key
                             GameCalendarListSeparator(toAff)
-                            Spacer()
-                                .frame(height: 15)
+//                            Spacer()
+//                                .frame(height: 15)
                             if selection == CalendarState.sorties {
                                 if let dictionary = gameDictionary[key] {
                                     ForEach(dictionary, id: \.self) { game in
+                                        Spacer(minLength: 50)
                                         ListGameRowCalendar(game: game, activeUser: activeUser)
                                     }
+                                    Spacer()
+                                    .frame(height: 50)
                                 }
                             }
                             else {
                                 if let dictionary = eventDictionary[key] {
                                     ForEach(dictionary, id: \.self) { event in
+                                        Spacer(minLength: 50)
                                         ListEventRow(event: event)
                                         }
+                                    Spacer()
+                                    .frame(height: 50)
                                     }
                                 }
                             }
