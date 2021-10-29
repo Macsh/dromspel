@@ -40,7 +40,7 @@ struct ListEventRow: View {
             }
 
             .padding(.horizontal)
-//            .frame(height: 70)
+            .frame(height: 70)
         }
     }
 }
