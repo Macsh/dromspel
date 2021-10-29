@@ -8,55 +8,88 @@
 import SwiftUI
 
 struct EventScreen: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var event: Event
     var body: some View {
 
         ZStack {
-            Color.black
-                .ignoresSafeArea()
-
-            VStack (alignment: .center, spacing: 10) {
+            ScrollView {
+            VStack (alignment: .center, spacing: 00) {
+                Spacer()
+                ZStack {
+                    Rectangle()
+                        .foregroundColor((colorScheme == .dark ? .black : .white))
+                        .opacity(0.5)
                 Text(event.name)
                     .font(.largeTitle.bold())
                     .bold()
-                Spacer()
-                Image(event.image)
-                    .resizable()
-                    .frame(width: 280, height: 170)
-                Spacer()
-                HStack {
-                Text("Quand ?")
-                        .bold()
+                }
+                ZStack {
+                    Rectangle()
+                        .foregroundColor((colorScheme == .dark ? .black : .white))
+                        .opacity(0.5)
+                    
                 Text(event.date)
-                    Spacer()
-            }
-                HStack {
-                Text("Où ?")
-                        .bold()
-                Text(event.localisation)
+                        .font(.system(size: 20, weight: .heavy))
 
-            }
-                HStack {
-                Text("Quoi ?")
-                        .bold()
+                }
                 Text(event.description)
-            }
-                HStack {
-                Text("Lien :")
-                    .bold()
+                        .padding()
+                        .font(.system(size: 15))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke((colorScheme == .dark ? .white : .black), lineWidth: 3)
+                                .opacity(1))
+                        .background(Color.black.opacity(0.5))
+                
+                        .cornerRadius(12)
+                        .padding()
+                Text(event.localisation)
                     .padding()
-                Text(event.link)
-            }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke((colorScheme == .dark ? .white : .black), lineWidth: 3)
+                            .opacity(1))
+                    .background(Color.blue.opacity(0.5))
+                    .cornerRadius(12)
+                    .font(.system(size: 15, weight: .heavy))
+                    .padding()
+                
+                ZStack {
+                    Rectangle()
+                        .foregroundColor((colorScheme == .dark ? .black : .white))
+                        .opacity(0.5)
+                    
+                        
+                    VStack {
+                        Text(event.link)
+                        .font(.system(size: 15, weight: .heavy))
+                        
+
+                    } }
 
             }.font(.system(size: 18))
+                .shadow(color: .black, radius: 3)
                 .navigationBarTitle(event.name)
-                .foregroundColor(Color.white)
+                .background(
+                    Image(event.image)
+                        .resizable()
+                        .scaledToFill()
+                        .clipped()
+                        .frame(width: 700, height: 650)                        .opacity(0.8)
+            )
         }
-    }
+            //.scaledToFill()
+    } //Fin ZStack
+}
 }
 
 struct EventScreen_Previews: PreviewProvider {
     static var previews: some View {
-        EventScreen(event: events[2])
+        EventScreen(event: events[0])
+            .preferredColorScheme(.dark)
+
     }
 }
+
