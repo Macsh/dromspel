@@ -23,6 +23,7 @@ struct EventScreen: View {
                         .opacity(0.5)
                 Text(event.name)
                     .font(.largeTitle.bold())
+                    .font(.system(size: 30, weight: .heavy))
                     .bold()
                 }
                 ZStack {
@@ -31,12 +32,12 @@ struct EventScreen: View {
                         .opacity(0.5)
                     
                 Text(event.date)
-                        .font(.system(size: 20, weight: .heavy))
+                        .font(.system(size: 25, weight: .heavy))
 
                 }
                 Text(event.description)
                         .padding()
-                        .font(.system(size: 15))
+                        .font(.system(size: 20))
                         .overlay(
                             RoundedRectangle(cornerRadius: 12)
                                 .stroke((colorScheme == .dark ? .white : .black), lineWidth: 3)
@@ -53,7 +54,7 @@ struct EventScreen: View {
                             .opacity(1))
                     .background(Color.blue.opacity(0.5))
                     .cornerRadius(12)
-                    .font(.system(size: 15, weight: .heavy))
+                    .font(.system(size: 20, weight: .heavy))
                     .padding()
                 
                 ZStack {
@@ -64,7 +65,7 @@ struct EventScreen: View {
                         
                     VStack {
                         Text(event.link)
-                        .font(.system(size: 15, weight: .heavy))
+                        .font(.system(size: 20, weight: .heavy))
                         
 
                     } }
@@ -77,7 +78,7 @@ struct EventScreen: View {
                         .resizable()
                         .scaledToFill()
                         .clipped()
-                        .frame(width: 700, height: 650)                        .opacity(0.8)
+                        .frame(width: 700, height: 900)                        .opacity(0.8)
             )
         }
             //.scaledToFill()
