@@ -14,13 +14,12 @@ fileprivate enum ListState: Int {
 struct MyList: View {
     @State private var selection = ListState.list
     
-    @State private var appearAnimation = false
+    //@State private var appearAnimation = false
     
     @ObservedObject private var activeUser : User
     
     init(user: User) {
         self.activeUser = user
-        //arrays = [user.gamesList, user.history]
     }
     
     var body: some View {
@@ -39,12 +38,12 @@ struct MyList: View {
                     VStack {
                         if selection == ListState.list {
                             ForEach(activeUser.gamesList , id: \.self) { gameIndex in
-                                GameListComponent(game : games[gameIndex], gIndex : gameIndex, activeUser: activeUser)
+                                GameListComponent(game : games[gameIndex], activeUser: activeUser)
                             }
                         }
                         else {
                             ForEach(activeUser.history.reversed() , id: \.self) { gameIndex in
-                                GameListComponent(game : games[gameIndex], gIndex : gameIndex, activeUser: activeUser)
+                                GameListComponent(game : games[gameIndex], activeUser: activeUser)
                             }
                         }
                     }

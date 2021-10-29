@@ -12,7 +12,6 @@ struct GameListComponent: View {
     @Environment(\.colorScheme) var colorScheme
     
     let game : Game
-    let gIndex: Int
     @State var activeUser: User
     
     var body: some View {
@@ -36,7 +35,7 @@ struct GameListComponent: View {
 
 struct GameListComponent_Previews: PreviewProvider {
     static var previews: some View {
-        GameListComponent(game: games[0], gIndex: 0, activeUser: user)
+        GameListComponent(game: games[0], activeUser: user)
             .preferredColorScheme(.dark)
     }
 }

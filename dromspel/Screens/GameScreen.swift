@@ -7,11 +7,21 @@
 
 import SwiftUI
 
+
 struct GameScreen: View {
+    static func getUniqueRandomNumbers(min: Int, max: Int, count: Int) -> [Int] {
+        var set = Set<Int>()
+        while set.count < count {
+            set.insert(Int.random(in: min...max))
+        }
+        return Array(set)
+    }
     @Environment(\.colorScheme) var colorScheme
     @State var game: Game
     @State var topID = 0
+    @State var horizontalID = 1
     @ObservedObject var activeUser: User
+    let uniqueNumbers: [Int] = getUniqueRandomNumbers(min: 0, max: 50, count: 5)
     var body: some View {
         ZStack {
             ScrollView { 
@@ -68,41 +78,46 @@ struct GameScreen: View {
                         }
                             ScrollView (.horizontal) {
                                 HStack (spacing: 60) {
-                                    Spacer(minLength: -30)
-                                    SuggestedGames(game:games[0], activeUser: activeUser)
+                                    Spacer(minLength: -30).id(horizontalID)
+                                    SuggestedGames(game:games[uniqueNumbers[0]], activeUser: activeUser)
                                     .frame(height: 185)
                                     .onTapGesture {
                                         proxy.scrollTo(topID)
-                                        game = games[0]
-                                        self.activeUser.history.append(0)
+                                        proxy.scrollTo(horizontalID)
+                                        game = games[uniqueNumbers[0]]
+                                        self.activeUser.history.append(uniqueNumbers[0])
                                 }
-                                SuggestedGames(game:games[1], activeUser: activeUser)
+                                SuggestedGames(game:games[uniqueNumbers[1]], activeUser: activeUser)
                                     .frame(height: 185)
                                     .onTapGesture {
                                         proxy.scrollTo(topID)
-                                        game = games[1]
-                                        self.activeUser.history.append(1)
+                                        proxy.scrollTo(horizontalID)
+                                        game = games[uniqueNumbers[1]]
+                                        self.activeUser.history.append(uniqueNumbers[1])
                                 }
-                                SuggestedGames(game:games[2], activeUser: activeUser)
+                                SuggestedGames(game:games[uniqueNumbers[2]], activeUser: activeUser)
                                     .frame(height: 185)
                                     .onTapGesture {
                                         proxy.scrollTo(topID)
-                                        game = games[2]
-                                        self.activeUser.history.append(2)
+                                        proxy.scrollTo(horizontalID)
+                                        game = games[uniqueNumbers[2]]
+                                        self.activeUser.history.append(uniqueNumbers[2])
                                 }
-                                    SuggestedGames(game:games[3], activeUser: activeUser)
+                                    SuggestedGames(game:games[uniqueNumbers[3]], activeUser: activeUser)
                                     .frame(height: 185)
                                     .onTapGesture {
                                         proxy.scrollTo(topID)
-                                        game = games[3]
-                                        self.activeUser.history.append(3)
+                                        proxy.scrollTo(horizontalID)
+                                        game = games[uniqueNumbers[3]]
+                                        self.activeUser.history.append(uniqueNumbers[3])
                                 }
-                                SuggestedGames(game:games[4], activeUser: activeUser)
+                                SuggestedGames(game:games[uniqueNumbers[4]], activeUser: activeUser)
                                     .frame(height: 185)
                                     .onTapGesture {
                                         proxy.scrollTo(topID)
-                                        game = games[4]
-                                        self.activeUser.history.append(4)
+                                        proxy.scrollTo(horizontalID)
+                                        game = games[uniqueNumbers[4]]
+                                        self.activeUser.history.append(uniqueNumbers[4])
                                 }
                                 }
                                 .padding()
@@ -119,6 +134,18 @@ struct GameScreen: View {
             }
     }
     }
+}
+
+extension Int {
+
+    static func getUniqueRandomNumbers(min: Int, max: Int, count: Int) -> [Int] {
+        var set = Set<Int>()
+        while set.count < count {
+            set.insert(Int.random(in: min...max))
+        }
+        return Array(set)
+    }
+
 }
 
 struct GameScreen_Previews: PreviewProvider {

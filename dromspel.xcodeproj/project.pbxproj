@@ -25,6 +25,10 @@
 		AC603A57272821030072A72E /* EventRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A56272821030072A72E /* EventRoot.swift */; };
 		AC603A59272821170072A72E /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A58272821170072A72E /* MyList.swift */; };
 		AC86E3D7272AAAD7006051A2 /* MiniGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86E3D6272AAAD7006051A2 /* MiniGameScreen.swift */; };
+		ACA24C90272BF21E0062F226 /* GameCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA24C8F272BF21E0062F226 /* GameCalendar.swift */; };
+		ACA24C92272BF2440062F226 /* ListGameRowCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA24C91272BF2440062F226 /* ListGameRowCalendar.swift */; };
+		ACA24C94272BF25A0062F226 /* GameCalendarListSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA24C93272BF25A0062F226 /* GameCalendarListSeparator.swift */; };
+		ACA24C96272BF26A0062F226 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA24C95272BF26A0062F226 /* SearchBar.swift */; };
 		ACE5C2F027297E4000CCF4F6 /* GameListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5C2EF27297E4000CCF4F6 /* GameListComponent.swift */; };
 		ACE5C2F42729840600CCF4F6 /* FirstBootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5C2F32729840600CCF4F6 /* FirstBootScreen.swift */; };
 		ACE5C2F6272A88C900CCF4F6 /* SuggestedGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5C2F5272A88C900CCF4F6 /* SuggestedGames.swift */; };
@@ -50,6 +54,10 @@
 		AC603A56272821030072A72E /* EventRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRoot.swift; sourceTree = "<group>"; };
 		AC603A58272821170072A72E /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
 		AC86E3D6272AAAD7006051A2 /* MiniGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameScreen.swift; sourceTree = "<group>"; };
+		ACA24C8F272BF21E0062F226 /* GameCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCalendar.swift; path = "../../../../../Downloads/Mises a jour composants-2/Screens/GameCalendar.swift"; sourceTree = "<group>"; };
+		ACA24C91272BF2440062F226 /* ListGameRowCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListGameRowCalendar.swift; path = "../../../../../Downloads/Mises a jour composants-2/Extracted Views/ListGameRowCalendar.swift"; sourceTree = "<group>"; };
+		ACA24C93272BF25A0062F226 /* GameCalendarListSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCalendarListSeparator.swift; path = "../../../../../Downloads/Mises a jour composants-2/Extracted Views/GameCalendarListSeparator.swift"; sourceTree = "<group>"; };
+		ACA24C95272BF26A0062F226 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchBar.swift; path = "../../../../../Downloads/Mises a jour composants-2/Extracted Views/SearchBar.swift"; sourceTree = "<group>"; };
 		ACE5C2EF27297E4000CCF4F6 /* GameListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListComponent.swift; sourceTree = "<group>"; };
 		ACE5C2F32729840600CCF4F6 /* FirstBootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBootScreen.swift; sourceTree = "<group>"; };
 		ACE5C2F5272A88C900CCF4F6 /* SuggestedGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedGames.swift; sourceTree = "<group>"; };
@@ -116,13 +124,16 @@
 		AC603A4C2727EC800072A72E /* Extracted Views */ = {
 			isa = PBXGroup;
 			children = (
-				AC603A4E2727ED140072A72E /* ListGameRow.swift */,
-				AC07C2DC2728449200DE778D /* VideoPlayerGame.swift */,
-				AC07C2DE272846DB00DE778D /* ListEventRow.swift */,
-				AC0B6B8227293A8D00D9271E /* ThumbButtons.swift */,
 				AC0B6B8427293F4700D9271E /* AddRemoveButton.swift */,
+				ACA24C93272BF25A0062F226 /* GameCalendarListSeparator.swift */,
 				ACE5C2EF27297E4000CCF4F6 /* GameListComponent.swift */,
+				AC07C2DE272846DB00DE778D /* ListEventRow.swift */,
+				AC603A4E2727ED140072A72E /* ListGameRow.swift */,
+				ACA24C91272BF2440062F226 /* ListGameRowCalendar.swift */,
+				ACA24C95272BF26A0062F226 /* SearchBar.swift */,
 				ACE5C2F5272A88C900CCF4F6 /* SuggestedGames.swift */,
+				AC0B6B8227293A8D00D9271E /* ThumbButtons.swift */,
+				AC07C2DC2728449200DE778D /* VideoPlayerGame.swift */,
 			);
 			path = "Extracted Views";
 			sourceTree = "<group>";
@@ -130,14 +141,15 @@
 		AC603A4D2727EC990072A72E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				AC603A502727ED290072A72E /* GameScreen.swift */,
-				AC603A52272820020072A72E /* GameRoot.swift */,
-				AC603A54272820ED0072A72E /* UserProfile.swift */,
 				AC603A56272821030072A72E /* EventRoot.swift */,
-				AC603A58272821170072A72E /* MyList.swift */,
 				AC07C2D7272833A400DE778D /* EventScreen.swift */,
 				ACE5C2F32729840600CCF4F6 /* FirstBootScreen.swift */,
+				ACA24C8F272BF21E0062F226 /* GameCalendar.swift */,
+				AC603A52272820020072A72E /* GameRoot.swift */,
+				AC603A502727ED290072A72E /* GameScreen.swift */,
 				AC86E3D6272AAAD7006051A2 /* MiniGameScreen.swift */,
+				AC603A58272821170072A72E /* MyList.swift */,
+				AC603A54272820ED0072A72E /* UserProfile.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -214,17 +226,21 @@
 			files = (
 				AC07C2DF272846DB00DE778D /* ListEventRow.swift in Sources */,
 				AC603A4F2727ED140072A72E /* ListGameRow.swift in Sources */,
+				ACA24C92272BF2440062F226 /* ListGameRowCalendar.swift in Sources */,
 				AC603A53272820020072A72E /* GameRoot.swift in Sources */,
 				AC07C2DD2728449200DE778D /* VideoPlayerGame.swift in Sources */,
 				AC603A492727EC690072A72E /* Models.swift in Sources */,
 				ACE5C2F42729840600CCF4F6 /* FirstBootScreen.swift in Sources */,
+				ACA24C94272BF25A0062F226 /* GameCalendarListSeparator.swift in Sources */,
 				AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */,
 				AC0B6B8327293A8D00D9271E /* ThumbButtons.swift in Sources */,
 				AC603A55272820ED0072A72E /* UserProfile.swift in Sources */,
+				ACA24C90272BF21E0062F226 /* GameCalendar.swift in Sources */,
 				AC0B6B8527293F4700D9271E /* AddRemoveButton.swift in Sources */,
 				AC07C2D8272833A400DE778D /* EventScreen.swift in Sources */,
 				AC603A57272821030072A72E /* EventRoot.swift in Sources */,
 				ACE5C2F027297E4000CCF4F6 /* GameListComponent.swift in Sources */,
+				ACA24C96272BF26A0062F226 /* SearchBar.swift in Sources */,
 				ACE5C2F6272A88C900CCF4F6 /* SuggestedGames.swift in Sources */,
 				AC603A512727ED290072A72E /* GameScreen.swift in Sources */,
 				AC603A4B2727EC790072A72E /* Database.swift in Sources */,

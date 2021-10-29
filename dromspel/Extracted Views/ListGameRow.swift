@@ -16,10 +16,11 @@ struct ListGameRow: View {
                 Image(self.game.image)
                         .resizable()
                         .scaledToFill()
+                        .opacity(0.8)
+                        .background(Color.black)
                         .frame(height: 100)
                         .clipped()
                         .cornerRadius(12)
-                        .opacity(0.8)
                         .overlay(
                             RoundedRectangle(cornerRadius: 12)
                             .stroke((colorScheme == .dark ? .white : .black), lineWidth: 3)

@@ -16,10 +16,11 @@ struct ContentView: View {
                     Text("Accueil")
                 }
             // On repete la meme operation autant de fois que necessaire
-            EventRoot()
+            //EventRoot()
+            GameCalendar(activeUser: user)
                 .tabItem {
                     Image(systemName: "calendar")
-                    Text("Evènements")
+                    Text("Calendrier")
                 }
             
             MyList(user: user)
