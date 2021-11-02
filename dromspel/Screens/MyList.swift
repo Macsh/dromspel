@@ -37,7 +37,7 @@ struct MyList: View {
                 ScrollView {
                     VStack {
                         if selection == ListState.list {
-                            ForEach(activeUser.gamesList , id: \.self) { gameIndex in
+                            ForEach(activeUser.gamesList.reversed() , id: \.self) { gameIndex in
                                 GameListComponent(game : games[gameIndex], activeUser: activeUser)
                             }
                         }
