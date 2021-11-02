@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "test-super-mario-world-lenvolee-jusquaux-etoiles-5.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

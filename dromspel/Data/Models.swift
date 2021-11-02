@@ -25,7 +25,10 @@ struct Game: Identifiable, Equatable {
     let price: String
 }
 
-struct Event: Identifiable {
+struct Event: Identifiable, Equatable {
+    static func == (lhs: Event, rhs: Event) -> Bool {
+        return lhs.id == rhs.id
+    }
     let id = UUID()
     let name: String
     let date: String
@@ -36,7 +39,7 @@ struct Event: Identifiable {
 }
 
 
-enum Action : String {
+enum Action : String, CaseIterable {
     case plateformes = "Plateforme"
     case shooter = "Shooter"
     case combat = "Combat"
@@ -48,56 +51,53 @@ enum Action : String {
     case TPS = "TPS"
 }
 
-enum ActionAventure : String {
+enum ActionAventure : String, CaseIterable {
     case survivalHorror = "Survival Horror"
     case metroidVania = "Metroidvania"
     case infiltration = "Infiltration"
 }
 
-enum Aventure : String {
-    case textAdventures = "Aventures textuelles"
-    case graphicAdventures = "Aventures graphiques"
-    case visualNovel = "Visual Novels"
+enum Aventure : String, CaseIterable {
+    case visualNovel = "Visual Novel"
     case interactiveMovie = "Fiction Intéractive"
 }
 
-enum RPG: String {
+enum RPG: String, CaseIterable {
     case actionRPG = "Action RPG"
     case MMORPG = "MMORPG"
-    case rogueLikes = "Rogue-Likes"
+    case rogueLikes = "Rogue-Like"
     case tacticalRPG = "RPG tactique"
-    case sandboxRPG = "RPG bac a sable"
-    case dungeonsRPG = "RPG donjons"
+    case sandboxRPG = "RPG bac à sable"
     case JRPG = "RPG japonais"
     case monsterTamer = "Capture de monstres"
     case hackAndSlash = "Hack'n'Slash"
 }
 
-enum Simulation : String {
+enum Simulation : String, CaseIterable {
     case constructionAndManagement = "Gestion"
     case life = "God game"
     case vehicles = "Simulation de véhicule"
 }
 
-enum Strategy: String {
+enum Strategy: String, CaseIterable {
     case MOBA = "MOBA"
-    case RTS = "Real-time strategy"
+    case RTS = "Stratégie en temps réel"
     case towerDefense = "Tower Défense"
-    case TBS = "stratégie au tour par tour"
-    case warGames = "jeux de guerre"
+    case TBS = "Stratégie au tour par tour"
+    case warGames = "Jeux de guerre"
 }
 
-enum Reflexion: String {
+enum Reflexion: String, CaseIterable {
     case puzzle = "Puzzle"
-    case labyrinth = "Labyrinth"
+    case labyrinth = "Labyrinthe"
 }
 
-enum Sport: String {
+enum Sport: String, CaseIterable {
     case racing = "Course"
     case sports = "Sport"
 }
 
-enum OpenWorld: String {
+enum OpenWorld: String, CaseIterable {
     case sandbox = "Bac à sable"
     case openWorld = "Monde ouvert"
 }
@@ -114,6 +114,22 @@ enum GameType {
     case Sport(value: Sport)
     case OpenWorld(value: OpenWorld)
     
+}
+
+extension GameType {
+    var keyString: String {
+        switch self {
+            case .Action(let action): return action.rawValue
+            case .ActionAventure(let actionAventure): return actionAventure.rawValue
+            case .Aventure(let aventure): return aventure.rawValue
+            case .RPG(let rpg): return rpg.rawValue
+            case .Simulation(let simulation): return simulation.rawValue
+            case .Strategy(let strategy): return strategy.rawValue
+            case .Reflexion(let reflexion): return reflexion.rawValue
+            case .Sport(let sport): return sport.rawValue
+            case .OpenWorld(let openWorld): return openWorld.rawValue
+        }
+    }
 }
 
 enum Pegi: String {

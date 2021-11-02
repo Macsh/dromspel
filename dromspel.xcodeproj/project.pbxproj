@@ -17,6 +17,7 @@
 		AC0B6B8327293A8D00D9271E /* ThumbButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B6B8227293A8D00D9271E /* ThumbButtons.swift */; };
 		AC0B6B8527293F4700D9271E /* AddRemoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B6B8427293F4700D9271E /* AddRemoveButton.swift */; };
 		AC143C1D272C22E10072DC37 /* GameStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC143C1C272C22E10072DC37 /* GameStyleButton.swift */; };
+		AC143C1F27313E100072DC37 /* PreferencesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC143C1E27313E100072DC37 /* PreferencesScreen.swift */; };
 		AC603A3A2727E9EF0072A72E /* dromspelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A392727E9EF0072A72E /* dromspelApp.swift */; };
 		AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A3B2727E9EF0072A72E /* ContentView.swift */; };
 		AC603A3E2727E9F20072A72E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC603A3D2727E9F20072A72E /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		AC0B6B8227293A8D00D9271E /* ThumbButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbButtons.swift; sourceTree = "<group>"; };
 		AC0B6B8427293F4700D9271E /* AddRemoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemoveButton.swift; sourceTree = "<group>"; };
 		AC143C1C272C22E10072DC37 /* GameStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStyleButton.swift; sourceTree = "<group>"; };
+		AC143C1E27313E100072DC37 /* PreferencesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesScreen.swift; sourceTree = "<group>"; };
 		AC603A362727E9EF0072A72E /* dromspel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dromspel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC603A392727E9EF0072A72E /* dromspelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dromspelApp.swift; sourceTree = "<group>"; };
 		AC603A3B2727E9EF0072A72E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				AC86E3D6272AAAD7006051A2 /* MiniGameScreen.swift */,
 				AC603A58272821170072A72E /* MyList.swift */,
 				AC603A54272820ED0072A72E /* UserProfile.swift */,
+				AC143C1E27313E100072DC37 /* PreferencesScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				ACE5C2F42729840600CCF4F6 /* FirstBootScreen.swift in Sources */,
 				AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */,
 				AC0B6B8327293A8D00D9271E /* ThumbButtons.swift in Sources */,
+				AC143C1F27313E100072DC37 /* PreferencesScreen.swift in Sources */,
 				AC603A55272820ED0072A72E /* UserProfile.swift in Sources */,
 				A051CF9D272C0181001EEC02 /* ListEventRow.swift in Sources */,
 				AC0B6B8527293F4700D9271E /* AddRemoveButton.swift in Sources */,
