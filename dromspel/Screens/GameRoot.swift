@@ -22,7 +22,7 @@ struct GameRoot: View {
                 NavigationLink(destination: GameScreen(game: games, activeUser: user), isActive: $navigationViewAreActive[index]) {
                     Button(action : {
                         navigationViewAreActive[index] = true
-                        self.activeUser.history.append(index)
+                        self.activeUser.addGameToHistory(index)
                     }, label: {
                         ListGameRow(game: games, activeUser: user)
                     })

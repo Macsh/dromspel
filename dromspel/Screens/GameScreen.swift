@@ -85,7 +85,7 @@ struct GameScreen: View {
                                         proxy.scrollTo(topID)
                                         proxy.scrollTo(horizontalID)
                                         game = games[uniqueNumbers[0]]
-                                        self.activeUser.history.append(uniqueNumbers[0])
+                                        self.activeUser.addGameToHistory(uniqueNumbers[0])
                                 }
                                 SuggestedGames(game:games[uniqueNumbers[1]], activeUser: activeUser)
                                     .frame(height: 185)
@@ -93,7 +93,7 @@ struct GameScreen: View {
                                         proxy.scrollTo(topID)
                                         proxy.scrollTo(horizontalID)
                                         game = games[uniqueNumbers[1]]
-                                        self.activeUser.history.append(uniqueNumbers[1])
+                                        self.activeUser.addGameToHistory(uniqueNumbers[1])
                                 }
                                 SuggestedGames(game:games[uniqueNumbers[2]], activeUser: activeUser)
                                     .frame(height: 185)
@@ -101,7 +101,7 @@ struct GameScreen: View {
                                         proxy.scrollTo(topID)
                                         proxy.scrollTo(horizontalID)
                                         game = games[uniqueNumbers[2]]
-                                        self.activeUser.history.append(uniqueNumbers[2])
+                                        self.activeUser.addGameToHistory(uniqueNumbers[2])
                                 }
                                     SuggestedGames(game:games[uniqueNumbers[3]], activeUser: activeUser)
                                     .frame(height: 185)
@@ -109,7 +109,7 @@ struct GameScreen: View {
                                         proxy.scrollTo(topID)
                                         proxy.scrollTo(horizontalID)
                                         game = games[uniqueNumbers[3]]
-                                        self.activeUser.history.append(uniqueNumbers[3])
+                                        self.activeUser.addGameToHistory(uniqueNumbers[3])
                                 }
                                 SuggestedGames(game:games[uniqueNumbers[4]], activeUser: activeUser)
                                     .frame(height: 185)
@@ -117,7 +117,7 @@ struct GameScreen: View {
                                         proxy.scrollTo(topID)
                                         proxy.scrollTo(horizontalID)
                                         game = games[uniqueNumbers[4]]
-                                        self.activeUser.history.append(uniqueNumbers[4])
+                                        self.activeUser.addGameToHistory(uniqueNumbers[4])
                                 }
                                 }
                                 .padding()

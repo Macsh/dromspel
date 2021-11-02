@@ -19,16 +19,36 @@ fileprivate struct ThumbUp: View {
     @Binding var drawOtherThumb: Bool
     //L'index du jeu ciblé dans le tableau global "games", en "@State" pour que l'on puisse le modifier a partir d'un bouton
     //Cette variable ne sera pas utilisée en dehors de cette structure
-    @State var gameIndex : Int
+    var gameIndex : Int
     //La variable permettant de savoir si le bouton est coché/validé ou non, en "@State" pour que l'on puisse le modifier a partir d'un bouton
     //Cette variable ne sera pas utilisée en dehors de cette structure
     @State var isValidated: Bool = false
     //L'utilisateur qui utilise ce bouton, en "@ObservedObject" pour que les changements s'actualisent a l'affichage quand on change une valeur "@Published" dans l'utilisateur
     @ObservedObject var activeUser : User
     //Le jeu ciblé sur lequel le pouce agira dans la structure "activeUser"
-    let game: Game
+    @State var game: Game
     //La taille du pouce
     let size: Double
+    
+    init(drawThumb: Binding<Bool>, drawOtherThumb: Binding<Bool>, gameIndex: Int, activeUser: User, game: Game, size: Double) {
+        self._drawThumb = drawThumb
+        self._drawOtherThumb = drawOtherThumb
+        self.gameIndex = gameIndex
+        self.activeUser = activeUser
+        self._game = State(initialValue: game)
+        self.size = size
+        
+        //On vérifie que la variable "gameIndex" est valide
+        if !isValidIndex(gameIndex) { //Si "gameIndex" n'est pas valide
+            
+            //On calcule l'index de la valeur "game" dans le tableau global de jeux disponibles (tableau de Game)
+            //Comme la fonction firstIndex retourne un Optional(Int), nous devons l'unwrapper dans la constante "gIndex"
+            //La constante "gIndex" contient donc l'index de la valeur voulue pour la variable "gameIndex" (c'est-à-dire l'index de la variable "game" dans le tableau global "games")
+            if let gIndex = games.firstIndex(of: self.game) {
+                self.gameIndex = gIndex
+            }
+        }
+    }
     
     //Le corps du pouce ou l'on met nos Views
     var body: some View {
@@ -46,6 +66,9 @@ fileprivate struct ThumbUp: View {
             }
                 .onTapGesture(perform: onTap) //On indique que dès que l'utilisateur appuie sur le pouce, la fonction "onTap" (se trouvant plus bas dans cette structure) est appelée
                 .onAppear(perform: appear) //On indique que dès que le pouce est affiché, la fonction "appear" (se trouvant plus bas dans cette structure) est appelée
+                .onChange(of: self.gameIndex, perform: { newIndex in //Quand cette structure
+                    isValidated = (activeUser.likedGames.contains(newIndex))
+                })
     }
     
     //Fonction vérifiant que l'index entré est valide (si il n'est pas égal a -1)
@@ -80,17 +103,6 @@ fileprivate struct ThumbUp: View {
     
     //Fonction appelée lorsque le pouce apparaît
     func appear() {
-        //On vérifie que la variable "gameIndex" est valide
-        if !isValidIndex(gameIndex) { //Si "gameIndex" n'est pas valide
-            
-            //On calcule l'index de la valeur "game" dans le tableau global de jeux disponibles (tableau de Game)
-            //Comme la fonction firstIndex retourne un Optional(Int), nous devons l'unwrapper dans la constante "gIndex"
-            //La constante "gIndex" contient donc l'index de la valeur voulue pour la variable "gameIndex" (c'est-à-dire l'index de la variable "game" dans le tableau global "games")
-            if let gIndex = games.firstIndex(of: self.game) {
-                self.gameIndex = gIndex
-            }
-        }
-        
         //On définit l'état de validation du bouton en vérifiant si la valeur "gameIndex" est contenue dans le tableau "likedGames" (si le jeu est un jeu que l'utilisateur a aimé)
         isValidated = (activeUser.likedGames.contains(gameIndex))
     }
@@ -109,16 +121,36 @@ fileprivate struct ThumbDown: View {
     @Binding var drawOtherThumb: Bool
     //L'index du jeu ciblé dans le tableau global "games", en "@State" pour que l'on puisse le modifier a partir d'un bouton
     //Cette variable ne sera pas utilisée en dehors de cette structure
-    @State var gameIndex : Int
+    var gameIndex : Int
     //La variable permettant de savoir si le bouton est coché/validé ou non, en "@State" pour que l'on puisse le modifier a partir d'un bouton
     //Cette variable ne sera pas utilisée en dehors de cette structure
     @State var isValidated: Bool = false
     //L'utilisateur qui utilise ce bouton, en "@ObservedObject" pour que les changements s'actualisent a l'affichage quand on change une valeur "@Published" dans l'utilisateur
     @ObservedObject var activeUser : User
     //Le jeu ciblé sur lequel le pouce agira dans la structure "activeUser"
-    let game: Game
+    @State var game: Game
     //La taille du pouce
     let size: Double
+    
+    init(drawThumb: Binding<Bool>, drawOtherThumb: Binding<Bool>, gameIndex: Int, activeUser: User, game: Game, size: Double) {
+        self._drawThumb = drawThumb
+        self._drawOtherThumb = drawOtherThumb
+        self.gameIndex = gameIndex
+        self.activeUser = activeUser
+        self._game = State(initialValue: game)
+        self.size = size
+        
+        //On vérifie que la variable "gameIndex" est valide
+        if !isValidIndex(gameIndex) { //Si "gameIndex" n'est pas valide
+            
+            //On calcule l'index de la valeur "game" dans le tableau global de jeux disponibles (tableau de Game)
+            //Comme la fonction firstIndex retourne un Optional(Int), nous devons l'unwrapper dans la constante "gIndex"
+            //La constante "gIndex" contient donc l'index de la valeur voulue pour la variable "gameIndex" (c'est-à-dire l'index de la variable "game" dans le tableau global "games")
+            if let gIndex = games.firstIndex(of: self.game) {
+                self.gameIndex = gIndex
+            }
+        }
+    }
     
     //Le corps du pouce ou l'on met nos Views
     var body: some View {
@@ -136,6 +168,9 @@ fileprivate struct ThumbDown: View {
         }
             .onTapGesture(perform: onTap) //On indique que dès que l'utilisateur appuie sur le pouce, la fonction "onTap" (se trouvant plus bas dans cette structure) est appelée
             .onAppear(perform: appear) //On indique que dès que le pouce est affiché, la fonction "appear" (se trouvant plus bas dans cette structure) est appelée
+            .onChange(of: self.gameIndex, perform: { newIndex in //Quand cette structure
+                isValidated = (activeUser.dislikedGames.contains(newIndex))
+            })
     }
     
     //Fonction vérifiant que l'index entré est valide (si il n'est pas égal a -1)
@@ -170,17 +205,6 @@ fileprivate struct ThumbDown: View {
     
     //Fonction appelée lorsque le pouce apparaît
     func appear() {
-        //On vérifie que la variable "gameIndex" est valide
-        if !isValidIndex(gameIndex) { //Si "gameIndex" n'est pas valide
-            
-            //On calcule l'index de la valeur "game" dans le tableau global de jeux disponibles (tableau de Game)
-            //Comme la fonction firstIndex retourne un Optional(Int), nous devons l'unwrapper dans la constante "gIndex"
-            //La constante "gIndex" contient donc l'index de la valeur voulue pour la variable "gameIndex" (c'est-à-dire l'index de la variable "game" dans le tableau global "games")
-            if let gIndex = games.firstIndex(of: self.game) {
-                self.gameIndex = gIndex
-            }
-        }
-        
         //On définit l'état de validation du bouton en vérifiant si la valeur "gameIndex" est contenue dans le tableau "dislikedGames" (si le jeu est un jeu que l'utilisateur n'a pas aimé)
         isValidated = (activeUser.dislikedGames.contains(gameIndex))
     }
@@ -197,7 +221,7 @@ struct ThumbButtons: View {
     //L'utilisateur qui utilise les boutons "pouces"
     var activeUser : User
     //Le jeu ciblé sur lequel les pouces agiront dans la structure "activeUser"
-    let game: Game
+    @State var game: Game
     //La taille des pouces
     let size: Double
     //L'espacement entre les deux pouces
@@ -214,7 +238,8 @@ struct ThumbButtons: View {
     init(size: Double = 30, spacing: Double = 0, activeUser: User, game: Game, gameIndex: Int = -1) {
         self.size = size
         self.activeUser = activeUser
-        self.game = game
+        //self._game = State(initialValue: game)
+        self._game = State(initialValue: game)
         self.spacing = spacing
         self.gameIndex = gameIndex
         
@@ -263,6 +288,15 @@ struct ThumbButtons: View {
             
             //Si le jeu est un jeu que l'utilisateur a aimé, alors on affiche pas le pouce pointant vers le bas
             drawThumbDown = !(activeUser.likedGames.contains(gameIndex))
+            
+        })
+        .onChange(of: self.gameIndex, perform: { newIndex in //Quand cette structure
+            
+            //Si le jeu est un jeu que l'utilisateur n'a pas aimé, alors on affiche pas le pouce pointant vers le haut
+            drawThumbUp = !(activeUser.dislikedGames.contains(newIndex))
+            
+            //Si le jeu est un jeu que l'utilisateur a aimé, alors on affiche pas le pouce pointant vers le bas
+            drawThumbDown = !(activeUser.likedGames.contains(newIndex))
         })
     }
     
@@ -274,8 +308,9 @@ struct ThumbButtons: View {
 
 struct ThumbButtons_Previews: PreviewProvider {
     static var previews: some View {
-        ThumbButtons(size: 30,activeUser: user, game: games[0])
+        ThumbButtons(size: 30,activeUser: user, game: games[2])
             .preferredColorScheme(.dark)
     }
 }
+
 

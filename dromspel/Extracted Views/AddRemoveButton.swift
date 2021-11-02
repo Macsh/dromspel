@@ -59,6 +59,14 @@ struct AddRemoveButton: View {
                     buttonMode = !(activeUser.gamesList.contains(gameIndex))
                 }
             })
+            .onChange(of: self.gameIndex, perform: { newValue in
+                if newValue == -1 {
+                    buttonMode = false
+                }
+                else {
+                    buttonMode = !(activeUser.gamesList.contains(newValue))
+                }
+            })
     }
 }
 

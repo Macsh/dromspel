@@ -7,20 +7,25 @@
 
 import Foundation
 
-struct Game: Identifiable, Hashable {
+struct Game: Identifiable, Equatable {
+    static func == (lhs: Game, rhs: Game) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id = UUID()
     let name: String
-    let type: String
+    let type: GameType
     let date: String
     let editor: String
     let video: String
     let image: String
     let description: String
+    let platform: [String]
     let pegi: String
     let price: String
 }
 
-struct Event: Identifiable, Hashable {
+struct Event: Identifiable {
     let id = UUID()
     let name: String
     let date: String
@@ -31,73 +36,84 @@ struct Event: Identifiable, Hashable {
 }
 
 
+enum Action : String {
+    case plateformes = "Plateforme"
+    case shooter = "Shooter"
+    case combat = "Combat"
+    case BTA = "Beat'em up"
+    case survie = "Survie"
+    case rhythm = "Rythme"
+    case battleRoyale = "Battle Royale"
+    case FPS = "FPS"
+    case TPS = "TPS"
+}
+
+enum ActionAventure : String {
+    case survivalHorror = "Survival Horror"
+    case metroidVania = "Metroidvania"
+    case infiltration = "Infiltration"
+}
+
+enum Aventure : String {
+    case textAdventures = "Aventures textuelles"
+    case graphicAdventures = "Aventures graphiques"
+    case visualNovel = "Visual Novels"
+    case interactiveMovie = "Fiction Intéractive"
+}
+
+enum RPG: String {
+    case actionRPG = "Action RPG"
+    case MMORPG = "MMORPG"
+    case rogueLikes = "Rogue-Likes"
+    case tacticalRPG = "RPG tactique"
+    case sandboxRPG = "RPG bac a sable"
+    case dungeonsRPG = "RPG donjons"
+    case JRPG = "RPG japonais"
+    case monsterTamer = "Capture de monstres"
+    case hackAndSlash = "Hack'n'Slash"
+}
+
+enum Simulation : String {
+    case constructionAndManagement = "Gestion"
+    case life = "God game"
+    case vehicles = "Simulation de véhicule"
+}
+
+enum Strategy: String {
+    case MOBA = "MOBA"
+    case RTS = "Real-time strategy"
+    case towerDefense = "Tower Défense"
+    case TBS = "stratégie au tour par tour"
+    case warGames = "jeux de guerre"
+}
+
+enum Reflexion: String {
+    case puzzle = "Puzzle"
+    case labyrinth = "Labyrinth"
+}
+
+enum Sport: String {
+    case racing = "Course"
+    case sports = "Sport"
+}
+
+enum OpenWorld: String {
+    case sandbox = "Bac à sable"
+    case openWorld = "Monde ouvert"
+}
+
 enum GameType {
     
-    enum Action : String {
-        case plateformes = "Plateforme"
-        case shooter = "Shooter"
-        case combat = "Combat"
-        case BTA = "Beat'em up"
-        case survie = "Survie"
-        case rhythm = "Rythme"
-        case battleRoyale = "Battle Royale"
-        case FPS = "FPS"
-        case TPS = "TPS"
-    }
+    case Action(value: Action)
+    case ActionAventure(value: ActionAventure)
+    case Aventure(value: Aventure)
+    case RPG(value: RPG)
+    case Simulation(value: Simulation)
+    case Strategy(value: Strategy)
+    case Reflexion(value: Reflexion)
+    case Sport(value: Sport)
+    case OpenWorld(value: OpenWorld)
     
-    enum ActionAventure : String {
-        case survivalHorror = "Survival Horror"
-        case metroidVania = "Metroidvania"
-        case infiltration = "Infiltration"
-    }
-    
-    enum Aventure : String {
-        case textAdventures = "Aventures textuelles"
-        case graphicAdventures = "Aventures graphiques"
-        case visualNovel = "Visual Novels"
-        case interactiveMovie = "Fiction Intéractive"
-    }
-    
-    enum RPG: String {
-        case actionRPG = "Action RPG"
-        case MMORPG = "MMORPG"
-        case rogueLikes = "Rogue-Likes"
-        case tacticalRPG = "RPG tactique"
-        case sandboxRPG = "RPG bac a sable"
-        case dungeonsRPG = "RPG donjons"
-        case JRPG = "RPG japonais"
-        case monsterTamer = "Capture de monstres"
-        case hackAndSlash = "Hack'n'Slash"
-    }
-    
-    enum Simulation : String {
-        case constructionAndManagement = "Gestion"
-        case life = "God game"
-        case vehicles = "Simulation de véhicule"
-    }
-    
-    enum Strategy: String {
-        case MOBA = "MOBA"
-        case RTS = "Real-time strategy"
-        case towerDefense = "Tower Défense"
-        case TBS = "stratégie au tour par tour"
-        case warGames = "jeux de guerre"
-    }
-    
-    enum Reflexion: String {
-        case puzzle = "Puzzle"
-        case labyrinth = "Labyrinth"
-    }
-    
-    enum Sport: String {
-        case racing = "Course"
-        case sports = "Sport"
-    }
-    
-    enum OpenWorld: String {
-        case sandbox = "Bac à sable"
-        case openWorld = "Monde ouvert"
-    }
 }
 
 enum Pegi: String {
@@ -129,6 +145,19 @@ class User : ObservableObject {
         self.experiences = experiences
         self.pseudo = pseudo
         self.description = description
+    }
+    
+    func addGameToHistory(_ game: Game) {
+        if let g = games.firstIndex(of: game) {
+            self.addGameToHistory(g)
+        }
+    }
+    
+    func addGameToHistory(_ index: Int) {
+        if let pos = self.history.firstIndex(of: index) {
+            self.history.remove(at: pos)
+        }
+        self.history.append(index)
     }
 }
 

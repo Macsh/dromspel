@@ -17,7 +17,7 @@ struct ListGameRowCalendar: View {
             Button(action: {
                 
                 if let gIndex = games.firstIndex(of: game) {
-                    self.activeUser.history.append(gIndex)
+                    self.activeUser.addGameToHistory(gIndex)
                     NavigationIsActive = true
                 }
             }) {

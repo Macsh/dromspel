@@ -1,14 +1,15 @@
 //
-//  Default.swift
-//  dromspiel
+//  GameStyleButton.swift
+//  dromspel
 //
-//  Created by alexandre on 26/10/2021.
+//  Created by alexandre on 29/10/2021.
 //
 
 import SwiftUI
 
-struct ListGameRow: View {
+struct GameStyleButton: View {
     var game: Game
+    var gameStyle : GameType
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var activeUser : User
     var body: some View {
@@ -29,9 +30,8 @@ struct ListGameRow: View {
                         
                 HStack {
                     VStack (alignment: .center, spacing: 10) {
-                        Text(self.game.name)
-                            .font(.system(size: 20, weight: .heavy))
-//                        Text(self.game.type)
+//                        Text(self.gameStyle)
+//                            .font(.system(size: 20, weight: .heavy))
                     }
                     .foregroundColor(.white)
                 }
@@ -41,9 +41,8 @@ struct ListGameRow: View {
         }
 }
 
-struct ListGameRow_Previews: PreviewProvider {
+struct GameStyleButton_Previews: PreviewProvider {
     static var previews: some View {
-        ListGameRow(game: games[0], activeUser: user)
-//            .preferredColorScheme(.dark)
+        GameStyleButton(game: games[0], gameStyle: GameType.RPG(value: .actionRPG), activeUser: user)
     }
 }
