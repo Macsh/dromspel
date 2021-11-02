@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PreferencesScreen: View {
     @ObservedObject var activeUser : User
-    @State var selection: Int = 0
+    @State var selection: Int = 1
+    @State var bindingSearch: String
     @State var navigationViewAreActive: [Bool] = Array(repeating: false, count: games.count)
     let columns = [
         GridItem(.flexible()),
@@ -65,11 +66,20 @@ struct PreferencesScreen: View {
                     }
                     .padding()
                     
-                    .navigationBarTitle("Nos Recommandations").navigationBarTitleDisplayMode(.inline).navigationViewStyle(StackNavigationViewStyle())
+                    .navigationBarTitle("Préférences").navigationBarTitleDisplayMode(.inline).navigationViewStyle(StackNavigationViewStyle())
                 }
             }
             else {
-                
+                VStack {
+                    SearchBar(binding: $bindingSearch)
+                    ScrollView {
+                        ForEach(activeUser.likedGames.reversed() , id: \.self) { gameIndex in
+                            GameListComponent(game : games[gameIndex], activeUser: activeUser)
+                        }
+                        .padding(.horizontal, 8)
+                        Spacer()
+                    }
+                }
             }
             
             Spacer()
@@ -81,6 +91,6 @@ struct PreferencesScreen: View {
 
 struct PreferencesScreen_Previews: PreviewProvider {
     static var previews: some View {
-        PreferencesScreen(activeUser: user)
+        PreferencesScreen(activeUser: user, bindingSearch: "")
     }
 }

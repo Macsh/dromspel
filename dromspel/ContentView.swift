@@ -17,7 +17,7 @@ struct ContentView: View {
                 }
             // On repete la meme operation autant de fois que necessaire
             //EventRoot()
-            GameRoot(activeUser: user)
+            GameCalendar(activeUser: user)
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Calendrier")
