@@ -19,8 +19,10 @@ struct GameListComponent: View {
             HStack {
                 Image(game.image)
                     .resizable()
-                    .scaledToFit()
-                    .frame(maxHeight: 60)
+                    .scaledToFill()
+                    .frame(maxWidth: 80, maxHeight: 60)
+                    .clipped()
+                    
                 Text(game.name)
                     .foregroundColor(colorScheme == .dark ? .white : .black)
                 Spacer()

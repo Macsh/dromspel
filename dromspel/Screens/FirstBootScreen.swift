@@ -11,82 +11,68 @@ struct FirstBootScreen: View {
     var body: some View {
         NavigationView {
             ZStack{
-
+                Image("background-profile")
+                    .resizable()
+                    .scaledToFill()
+                    .opacity(0.8)
                 VStack{
-
-                    Button (action: {
-
-                    }, label:{
-
-
-                        VStack{
-                            Text ("Selectionner vos preferences:")
-                                .font(.system(size: 20))
-
-                            HStack{
-
-                                Text("Fight")
-
-                                    .padding(8)
-                                    .foregroundColor(Color.blue)
-                                    .background(Color.white)
-                                    .cornerRadius (9)
-                                Text("Arcade")
-                                    .padding(8)
-                                    .foregroundColor(Color.blue)
-                                    .background(Color.white)
-                                    .cornerRadius (9)
-
-                            }
-HStack{
-
-                                Text("Aventure")
-                                    .padding(8)
-                                    .foregroundColor(Color.blue)
-                                    .background(Color.white)
-                                    .cornerRadius (9)
-                                Text("Simulation")
-                                    .padding(8)
-                                    .foregroundColor(Color.blue)
-                                    .background(Color.white)
-                                    .cornerRadius (9)
-
-
-                            }
-
+                    
+                    
+                    NavigationLink (destination:MiniGameScreen(), label:{
+                    VStack{
+                        Text ("Selectionnez vos preferences:")
+                            .font(.system(size: 20, weight: .bold))
+                        
+                        HStack{
+                            
+                            StyleFirstScreen(gameStyle: GameType.ActionAventure(value:.metroidVania), activeUser: user)
+                                .padding(8)
+                            StyleFirstScreen(gameStyle: GameType.RPG(value:.JRPG), activeUser: user)
+                                .padding(8)
+                            
                         }
+                        HStack{
+                            
+                            StyleFirstScreen(gameStyle: GameType.Action(value:.FPS), activeUser: user)
+                                .padding(8)
+                            StyleFirstScreen(gameStyle: GameType.OpenWorld(value:.openWorld), activeUser: user)
+                                .padding(8)
+                            
+                            
+                        }
+                        
+                    }
+                    .padding(30)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(20)
+                    })
+                    
+                    
+                    
+                    
+                    
+                    Spacer().frame(height: 150)
+                    
+                    NavigationLink (destination:MiniGameScreen(), label:{
+                        VStack{
+                            Text ("Vous ne savez pas choisir, cliquez ici")
+                            Image (systemName:"gamecontroller.fill")
+                            
+                        }
+                        .font(.system(size: 20))
                         .padding(30)
                         .foregroundColor(Color.white)
-                        .background(Color.blue)
+                        .background(Color.red)
                         .cornerRadius(20)
-
-
                     })
-
-
-                    Spacer().frame(height: 150)
-
-                    Button (action: {
-
-                    }, label: {
-NavigationLink (destination:MiniGameScreen(), label:{
-                            VStack{
-                                Text ("Vous ne savez pas choisir, cliquez ici")
-                                Image (systemName:"gamecontroller.fill")
-
-                            }
-                            .font(.system(size: 20))
-                            .padding(30)
-                            .foregroundColor(Color.white)
-                            .background(Color.red)
-                            .cornerRadius(20)
-                        })
-
-
-                    })            }
-
-
+                    
+                    
+                }
+                
+                
             }
+            
         }
     }
 }
