@@ -18,6 +18,7 @@
 		AC0B6B8527293F4700D9271E /* AddRemoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B6B8427293F4700D9271E /* AddRemoveButton.swift */; };
 		AC143C1D272C22E10072DC37 /* GameStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC143C1C272C22E10072DC37 /* GameStyleButton.swift */; };
 		AC143C1F27313E100072DC37 /* PreferencesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC143C1E27313E100072DC37 /* PreferencesScreen.swift */; };
+		AC143C2127317EA20072DC37 /* GamePrefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC143C2027317EA20072DC37 /* GamePrefComponent.swift */; };
 		AC603A3A2727E9EF0072A72E /* dromspelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A392727E9EF0072A72E /* dromspelApp.swift */; };
 		AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A3B2727E9EF0072A72E /* ContentView.swift */; };
 		AC603A3E2727E9F20072A72E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC603A3D2727E9F20072A72E /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		AC0B6B8427293F4700D9271E /* AddRemoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemoveButton.swift; sourceTree = "<group>"; };
 		AC143C1C272C22E10072DC37 /* GameStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStyleButton.swift; sourceTree = "<group>"; };
 		AC143C1E27313E100072DC37 /* PreferencesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesScreen.swift; sourceTree = "<group>"; };
+		AC143C2027317EA20072DC37 /* GamePrefComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePrefComponent.swift; sourceTree = "<group>"; };
 		AC603A362727E9EF0072A72E /* dromspel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dromspel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC603A392727E9EF0072A72E /* dromspelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dromspelApp.swift; sourceTree = "<group>"; };
 		AC603A3B2727E9EF0072A72E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				AC07C2DC2728449200DE778D /* VideoPlayerGame.swift */,
 				ACA24C99272C1E150062F226 /* CheckMarkButton.swift */,
 				AC143C1C272C22E10072DC37 /* GameStyleButton.swift */,
+				AC143C2027317EA20072DC37 /* GamePrefComponent.swift */,
 			);
 			path = "Extracted Views";
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				AC603A4B2727EC790072A72E /* Database.swift in Sources */,
 				AC603A3A2727E9EF0072A72E /* dromspelApp.swift in Sources */,
 				AC603A59272821170072A72E /* MyList.swift in Sources */,
+				AC143C2127317EA20072DC37 /* GamePrefComponent.swift in Sources */,
 				AC86E3D7272AAAD7006051A2 /* MiniGameScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

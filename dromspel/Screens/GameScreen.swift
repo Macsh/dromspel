@@ -37,7 +37,8 @@ struct GameScreen: View {
                             AddRemoveButton(size: 25, activeUser: activeUser, game: game)
                                 
                         }
-                           
+                            
+                            
                             Text(game.description)
                             .padding()
                             .font(.system(size: 15))
@@ -50,7 +51,44 @@ struct GameScreen: View {
                             .cornerRadius(12)
                             .padding()
                         
+                        HStack {
+                            ForEach(game.platform , id: \.self) { platform in
+                                if platform == "logo-switch" {
+                                    if  colorScheme == .dark {
+                                        Image(platform)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(height: 35)
+                                            .colorInvert()
+                                    } else {
+                                        Image(platform)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(height: 35)
+                                    }
+                            
+                                } else {
+                                Image(systemName: platform)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 30)
+                                }
+                            }
+                            
+                            .padding()
+                        }
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                            .stroke((colorScheme == .dark ? .white : .black), lineWidth: 3)
+                                
+                                .opacity(1))
+                        .background(Color(colorScheme == .dark ? .black : .white).opacity(0.5))
+                        .cornerRadius(12)
+                        
+                        
+                        
                             Spacer()
+                        
                         
                         Text("Prix Actuel : \(game.price)")
                             .padding()
@@ -64,6 +102,9 @@ struct GameScreen: View {
                             .padding()
                         Spacer()
                             .frame(height: 20)
+                        
+                        
+                        
                         ZStack {
                             Rectangle()
                                 .foregroundColor((colorScheme == .dark ? .black : .white))
@@ -150,8 +191,8 @@ extension Int {
 
 struct GameScreen_Previews: PreviewProvider {
     static var previews: some View {
-        GameScreen(game: games[0], activeUser : user)
-                    .preferredColorScheme(.dark)
+        GameScreen(game: games[2], activeUser : user)
+//                    .preferredColorScheme(.dark)
     }
 }
 
