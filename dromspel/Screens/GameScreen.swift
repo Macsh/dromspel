@@ -21,10 +21,11 @@ struct GameScreen: View {
     @State var topID = 0
     @State var horizontalID = 1
     @ObservedObject var activeUser: User
-    let uniqueNumbers: [Int] = getUniqueRandomNumbers(min: 0, max: 50, count: 5)
+    @State var uniqueNumbers: [Int] = getUniqueRandomNumbers(min: 0, max: games.count, count: 5)
+    
     var body: some View {
         ZStack {
-            ScrollView { 
+            ScrollView {
                 ScrollViewReader { proxy in
                     VStack(alignment: .center, spacing: 5){
                     VideoPlayerGame(game: game).id(topID)
@@ -37,8 +38,7 @@ struct GameScreen: View {
                             AddRemoveButton(size: 25, activeUser: activeUser, game: game)
                                 
                         }
-                            
-                            
+                           
                             Text(game.description)
                             .padding()
                             .font(.system(size: 15))
@@ -85,10 +85,7 @@ struct GameScreen: View {
                         .background(Color(colorScheme == .dark ? .black : .white).opacity(0.5))
                         .cornerRadius(12)
                         
-                        
-                        
                             Spacer()
-                        
                         
                         Text("Prix Actuel : \(game.price)")
                             .padding()
@@ -102,9 +99,6 @@ struct GameScreen: View {
                             .padding()
                         Spacer()
                             .frame(height: 20)
-                        
-                        
-                        
                         ZStack {
                             Rectangle()
                                 .foregroundColor((colorScheme == .dark ? .black : .white))
@@ -127,6 +121,7 @@ struct GameScreen: View {
                                         proxy.scrollTo(horizontalID)
                                         game = games[uniqueNumbers[0]]
                                         self.activeUser.addGameToHistory(uniqueNumbers[0])
+                                        self.uniqueNumbers = suggerer(5)
                                 }
                                 SuggestedGames(game:games[uniqueNumbers[1]], activeUser: activeUser)
                                     .frame(height: 185)
@@ -135,6 +130,7 @@ struct GameScreen: View {
                                         proxy.scrollTo(horizontalID)
                                         game = games[uniqueNumbers[1]]
                                         self.activeUser.addGameToHistory(uniqueNumbers[1])
+                                        self.uniqueNumbers = suggerer(5)
                                 }
                                 SuggestedGames(game:games[uniqueNumbers[2]], activeUser: activeUser)
                                     .frame(height: 185)
@@ -143,6 +139,7 @@ struct GameScreen: View {
                                         proxy.scrollTo(horizontalID)
                                         game = games[uniqueNumbers[2]]
                                         self.activeUser.addGameToHistory(uniqueNumbers[2])
+                                        self.uniqueNumbers = suggerer(5)
                                 }
                                     SuggestedGames(game:games[uniqueNumbers[3]], activeUser: activeUser)
                                     .frame(height: 185)
@@ -151,6 +148,7 @@ struct GameScreen: View {
                                         proxy.scrollTo(horizontalID)
                                         game = games[uniqueNumbers[3]]
                                         self.activeUser.addGameToHistory(uniqueNumbers[3])
+                                        self.uniqueNumbers = suggerer(5)
                                 }
                                 SuggestedGames(game:games[uniqueNumbers[4]], activeUser: activeUser)
                                     .frame(height: 185)
@@ -159,6 +157,7 @@ struct GameScreen: View {
                                         proxy.scrollTo(horizontalID)
                                         game = games[uniqueNumbers[4]]
                                         self.activeUser.addGameToHistory(uniqueNumbers[4])
+                                        self.uniqueNumbers = suggerer(5)
                                 }
                                 }
                                 .padding()
@@ -171,9 +170,42 @@ struct GameScreen: View {
                     .scaledToFill()
                     .clipped()
                     .opacity(0.8)
+                    .onAppear(perform: {
+                        self.uniqueNumbers = suggerer(5)
+                    })
         )
             }
     }
+    }
+    
+    func suggerer(_ nb: Int) -> [Int] {
+        var result: [Int] = []
+        
+        var numberToSuggerate = nb
+        var gamesTemp = games
+        
+        for i in 0..<games.count {
+            if (games[i] != self.game && games[i].type.keyString == self.game.type.keyString && !self.activeUser.dislikedGames.contains(i)) {
+                result.append(i)
+                gamesTemp.remove(at: i)
+                numberToSuggerate -= 1
+                
+                if numberToSuggerate <= 0 {
+                    break;
+                }
+            }
+        }
+        
+        while result.count < 6 {
+            var r = Int.random(in: 0..<gamesTemp.count)
+            while games[r] == self.game {
+                r = Int.random(in: 0..<gamesTemp.count)
+            }
+            result.append(r)
+            gamesTemp.remove(at: r)
+        }
+        
+        return result
     }
 }
 
@@ -191,8 +223,8 @@ extension Int {
 
 struct GameScreen_Previews: PreviewProvider {
     static var previews: some View {
-        GameScreen(game: games[2], activeUser : user)
-//                    .preferredColorScheme(.dark)
+        GameScreen(game: games[0], activeUser : user)
+                    .preferredColorScheme(.dark)
     }
 }
 

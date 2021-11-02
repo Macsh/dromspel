@@ -177,3 +177,45 @@ class User : ObservableObject {
     }
 }
 
+enum Motivation: String, CaseIterable, Identifiable {
+    
+    case passerLeTemps
+    case exterioriser
+    case seViderLeCrane
+    case autre
+
+    var id: String { self.rawValue }
+
+}
+    
+enum WhichPlayer: String, CaseIterable, Identifiable {
+    case jeuxCollectifs
+    case egotrip
+
+    var id: String { self.rawValue }
+}
+
+enum AreYou: String, CaseIterable, Identifiable {
+    
+    case man
+    case woman
+    case both
+
+    var id: String { self.rawValue }
+
+}
+
+enum GameTypeTitles: String, CaseIterable, Identifiable {
+    
+    case action
+    case aventure
+    case rpg
+    case simulation
+    case strategy
+    case reflexion
+    case sport
+    case openworld
+
+    var id: String { self.rawValue }
+
+}
