@@ -64,10 +64,9 @@ struct EventScreen: View {
                     
                         
                     VStack {
-                        Text(event.link)
-                        .font(.system(size: 20, weight: .heavy))
-                        
-
+                        Link("Plus de détails", destination: URL(string: event.link)!)
+                                                .font(.system(size: 20, weight: .heavy))
+                                                .padding()
                     } }
 
             }.font(.system(size: 18))

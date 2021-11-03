@@ -8,79 +8,45 @@
 import SwiftUI
 
 struct FirstBootScreen: View {
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationView {
             ZStack(alignment: .top){
-                Image("background-profile")
-                    .resizable()
-                    .scaledToFill()
-                    .opacity(0.8)
-                    .ignoresSafeArea()
+                Color(red: 212 / 255, green: 230 / 255, blue: 241 / 255)
+                    .ignoresSafeArea(.all)
+//                Image("Firstscreen-bg")
+//                    .resizable()
+//                    .scaledToFill()
+//                    .opacity(0.7)
+//                    .background(Color.black)
+//                    .clipped()
                 
                 VStack{
                     Spacer()
                         .frame(height: 50)
                     NavigationLink (destination:MiniGameScreen(), label:{
-                        
-                        VStack{
-                            Text ("Selectionnez vos preferences:")
-                                .font(.system(size: 20, weight: .bold))
-                            
-                            HStack{
+                            ChoiceButton()
                                 
-                                StyleFirstScreen(gameStyle: GameType.ActionAventure(value:.metroidVania), activeUser: user)
-                                    .padding(8)
-                                StyleFirstScreen(gameStyle: GameType.RPG(value:.JRPG), activeUser: user)
-                                    .padding(8)
-                                
-                            }
-                            
-                            HStack{
-                                
-                                StyleFirstScreen(gameStyle: GameType.Action(value:.FPS), activeUser: user)
-                                    .padding(8)
-                                StyleFirstScreen(gameStyle: GameType.OpenWorld(value:.openWorld), activeUser: user)
-                                    .padding(8)
-                                
-                                
-                            }
-                        }
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background(Color.blue)
-                        .cornerRadius(20)
-                        
                     })
-                        
-                        .padding()
-                        .padding()
+                    Spacer()
+                        .frame(height: 50)
                     
                     NavigationLink (destination:MiniGameScreen(), label:{
-                        VStack{
-                            Text ("Vous ne savez pas quoi choisir ?")
-                                .font(.system(size: 20, weight: .bold))
-                                .padding()
-                            Text ("Cliquez ici :")
-                                .font(.system(size: 20, weight: .bold))
-                            Image (systemName:"gamecontroller.fill")
-                                .padding()
-                            
-                        }
-                        .font(.system(size: 20))
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background(Color.red)
-                        .cornerRadius(20)
+                            ChoiceButtonQuestion()
+                                
                     })
                     
-                        .padding()
+                        
                 }
+                .padding()
 
                 
                 
             }
-            .navigationBarTitle("Faite votre choix").navigationBarTitleDisplayMode(.inline).navigationViewStyle(StackNavigationViewStyle())
+            
+            .navigationBarTitle("Faites votre choix").navigationBarTitleDisplayMode(.inline).navigationViewStyle(StackNavigationViewStyle())
 //            .navigationBarHidden(true)
+            
         }
         
     }
@@ -90,5 +56,6 @@ struct FirstBootScreen: View {
 struct FirstBootScreen_Previews: PreviewProvider {
     static var previews: some View {
         FirstBootScreen()
+//            .preferredColorScheme(.dark)
     }
 }
