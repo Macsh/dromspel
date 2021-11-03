@@ -147,4 +147,4 @@ var events = [
 ]
 
 
-var user = User(gamesList: [1,2], history: [2, 1, 3], likedGames: [3,4,5,6], dislikedGames: [1], preferences: [], experiences: [], pseudo: "Joseph", description: "C'est un utilisateur")
+var user = User()

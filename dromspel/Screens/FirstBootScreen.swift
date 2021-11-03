@@ -23,6 +23,8 @@ import SwiftUI
 
 struct FirstBootScreen: View {
     @Environment(\.colorScheme) var colorScheme
+    @Binding var isValidated: Bool
+
     var body: some View {
         NavigationView {
             ZStack(alignment: .top){
@@ -49,7 +51,7 @@ struct FirstBootScreen: View {
                 VStack{
                     Spacer()
                         .frame(height: 50)
-                    NavigationLink (destination:MiniGameScreen(), label:{
+                    NavigationLink (destination:FirstBootStyle(isValidated : $isValidated), label:{
                             ChoiceButton()
                                 
                     })
@@ -84,7 +86,7 @@ struct FirstBootScreen: View {
 
 struct FirstBootScreen_Previews: PreviewProvider {
     static var previews: some View {
-        FirstBootScreen()
+        FirstBootScreen(isValidated: .constant(false))
 //            .preferredColorScheme(.dark)
     }
 }

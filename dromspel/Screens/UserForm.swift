@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct UserForm: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     @State private var selectedMotivation = Motivation.passerLeTemps
     @State private var selectedPegi = Pegi.pegi_3
     @State private var selectedPlayer = WhichPlayer.jeuxCollectifs
     @State private var selectedGender = AreYou.man
     @State private var selectedType = GameTypeTitles.action
     @State private var dernierJeuJoue: String = ""
-    @State private var dernierJeuAchete: String = ""
+    @State private var selectedGame = -1
+    @State private var selections: [String] = []
+
+//    var action: () -> Void
+
+
 
 
     var body: some View {
@@ -78,34 +86,27 @@ struct UserForm: View {
                         Text("Openworld \n(parce que le vrai monde est trop fermé pour ta libre personne)").tag(GameTypeTitles.openworld)
 
                 }
-                    HStack {
-                    Text("Dernier jeu joué ?")
-                        TextField("", text: $dernierJeuJoue)
-                            .background(Color.gray)
-                            .cornerRadius(20)
-                            .padding()
-
-                }
-                    HStack {
-                    Text("Dernier jeu acheté ?")
-                    TextField("", text: $dernierJeuAchete)
-                            .background(Color.gray)
-                            .cornerRadius(20)
-                            .padding()
+                    NavigationLink(destination: selectedPlayedGames()) {
+                        Text("Avez vous déjà joué à... ?")
+                    }
+                    
+                    }
 
                 }
                     
                 }
-                
-            }
+
+    
+            
         }
     }
-    
-}
+
+
 
 struct UserForm_Previews: PreviewProvider {
     static var previews: some View {
         UserForm()
+
     }
 }
 

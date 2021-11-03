@@ -20,6 +20,10 @@
 		AC143C1F27313E100072DC37 /* PreferencesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC143C1E27313E100072DC37 /* PreferencesScreen.swift */; };
 		AC143C2127317EA20072DC37 /* GamePrefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC143C2027317EA20072DC37 /* GamePrefComponent.swift */; };
 		AC143C232731886A0072DC37 /* StyleFirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC143C222731886A0072DC37 /* StyleFirstScreen.swift */; };
+		AC29EA7B2732DA81002EB5DB /* StylePreferencesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29EA7A2732DA81002EB5DB /* StylePreferencesButton.swift */; };
+		AC29EA7D2732DADD002EB5DB /* GamePreferencesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29EA7C2732DADD002EB5DB /* GamePreferencesButton.swift */; };
+		AC29EA7F2732DC2C002EB5DB /* SmallButtonGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29EA7E2732DC2C002EB5DB /* SmallButtonGame.swift */; };
+		AC29EA812732E5EB002EB5DB /* SelectedPlayedGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29EA802732E5EB002EB5DB /* SelectedPlayedGames.swift */; };
 		AC5E1073273196F00078C680 /* UserForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1072273196F00078C680 /* UserForm.swift */; };
 		AC5E107527327CFE0078C680 /* ChoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E107427327CFE0078C680 /* ChoiceButton.swift */; };
 		AC5E1077273282560078C680 /* ChoiceButtonQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1076273282560078C680 /* ChoiceButtonQuestion.swift */; };
@@ -35,9 +39,10 @@
 		AC603A55272820ED0072A72E /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A54272820ED0072A72E /* UserProfile.swift */; };
 		AC603A57272821030072A72E /* EventRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A56272821030072A72E /* EventRoot.swift */; };
 		AC603A59272821170072A72E /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A58272821170072A72E /* MyList.swift */; };
-		AC86E3D7272AAAD7006051A2 /* MiniGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86E3D6272AAAD7006051A2 /* MiniGameScreen.swift */; };
 		AC8EEB2E2732B53C006BA63D /* FirstBootStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EEB2D2732B53C006BA63D /* FirstBootStyle.swift */; };
 		AC8EEB322732BB2A006BA63D /* FirstBootGameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EEB312732BB2A006BA63D /* FirstBootGameList.swift */; };
+		AC8EEB342732BCD9006BA63D /* NextStepButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EEB332732BCD9006BA63D /* NextStepButton.swift */; };
+		AC8EEB362732C8A5006BA63D /* TextBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EEB352732C8A5006BA63D /* TextBubble.swift */; };
 		ACA24C9A272C1E150062F226 /* CheckMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA24C99272C1E150062F226 /* CheckMarkButton.swift */; };
 		ACE5C2F027297E4000CCF4F6 /* GameListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5C2EF27297E4000CCF4F6 /* GameListComponent.swift */; };
 		ACE5C2F42729840600CCF4F6 /* FirstBootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5C2F32729840600CCF4F6 /* FirstBootScreen.swift */; };
@@ -58,6 +63,10 @@
 		AC143C1E27313E100072DC37 /* PreferencesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesScreen.swift; sourceTree = "<group>"; };
 		AC143C2027317EA20072DC37 /* GamePrefComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePrefComponent.swift; sourceTree = "<group>"; };
 		AC143C222731886A0072DC37 /* StyleFirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleFirstScreen.swift; sourceTree = "<group>"; };
+		AC29EA7A2732DA81002EB5DB /* StylePreferencesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylePreferencesButton.swift; sourceTree = "<group>"; };
+		AC29EA7C2732DADD002EB5DB /* GamePreferencesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePreferencesButton.swift; sourceTree = "<group>"; };
+		AC29EA7E2732DC2C002EB5DB /* SmallButtonGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButtonGame.swift; sourceTree = "<group>"; };
+		AC29EA802732E5EB002EB5DB /* SelectedPlayedGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlayedGames.swift; sourceTree = "<group>"; };
 		AC5E1072273196F00078C680 /* UserForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForm.swift; sourceTree = "<group>"; };
 		AC5E107427327CFE0078C680 /* ChoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceButton.swift; sourceTree = "<group>"; };
 		AC5E1076273282560078C680 /* ChoiceButtonQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceButtonQuestion.swift; sourceTree = "<group>"; };
@@ -74,9 +83,10 @@
 		AC603A54272820ED0072A72E /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		AC603A56272821030072A72E /* EventRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRoot.swift; sourceTree = "<group>"; };
 		AC603A58272821170072A72E /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
-		AC86E3D6272AAAD7006051A2 /* MiniGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameScreen.swift; sourceTree = "<group>"; };
 		AC8EEB2D2732B53C006BA63D /* FirstBootStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBootStyle.swift; sourceTree = "<group>"; };
 		AC8EEB312732BB2A006BA63D /* FirstBootGameList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBootGameList.swift; sourceTree = "<group>"; };
+		AC8EEB332732BCD9006BA63D /* NextStepButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepButton.swift; sourceTree = "<group>"; };
+		AC8EEB352732C8A5006BA63D /* TextBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBubble.swift; sourceTree = "<group>"; };
 		ACA24C99272C1E150062F226 /* CheckMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkButton.swift; sourceTree = "<group>"; };
 		ACE5C2EF27297E4000CCF4F6 /* GameListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListComponent.swift; sourceTree = "<group>"; };
 		ACE5C2F32729840600CCF4F6 /* FirstBootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBootScreen.swift; sourceTree = "<group>"; };
@@ -158,8 +168,14 @@
 				AC143C1C272C22E10072DC37 /* GameStyleButton.swift */,
 				AC143C2027317EA20072DC37 /* GamePrefComponent.swift */,
 				AC143C222731886A0072DC37 /* StyleFirstScreen.swift */,
+				AC29EA7E2732DC2C002EB5DB /* SmallButtonGame.swift */,
 				AC5E107427327CFE0078C680 /* ChoiceButton.swift */,
+				AC29EA7A2732DA81002EB5DB /* StylePreferencesButton.swift */,
+				AC29EA7C2732DADD002EB5DB /* GamePreferencesButton.swift */,
 				AC5E1076273282560078C680 /* ChoiceButtonQuestion.swift */,
+				AC8EEB332732BCD9006BA63D /* NextStepButton.swift */,
+				AC8EEB352732C8A5006BA63D /* TextBubble.swift */,
+				AC29EA802732E5EB002EB5DB /* SelectedPlayedGames.swift */,
 			);
 			path = "Extracted Views";
 			sourceTree = "<group>";
@@ -173,7 +189,6 @@
 				A051CFA2272C0200001EEC02 /* GameCalendar.swift */,
 				AC603A52272820020072A72E /* GameRoot.swift */,
 				AC603A502727ED290072A72E /* GameScreen.swift */,
-				AC86E3D6272AAAD7006051A2 /* MiniGameScreen.swift */,
 				AC603A58272821170072A72E /* MyList.swift */,
 				AC603A54272820ED0072A72E /* UserProfile.swift */,
 				AC143C1E27313E100072DC37 /* PreferencesScreen.swift */,
@@ -256,13 +271,17 @@
 			files = (
 				AC603A4F2727ED140072A72E /* ListGameRow.swift in Sources */,
 				AC603A53272820020072A72E /* GameRoot.swift in Sources */,
+				AC29EA7B2732DA81002EB5DB /* StylePreferencesButton.swift in Sources */,
 				A051CF9F272C01A8001EEC02 /* ListGameRowCalendar.swift in Sources */,
 				AC07C2DD2728449200DE778D /* VideoPlayerGame.swift in Sources */,
+				AC8EEB342732BCD9006BA63D /* NextStepButton.swift in Sources */,
 				AC603A492727EC690072A72E /* Models.swift in Sources */,
 				ACE5C2F42729840600CCF4F6 /* FirstBootScreen.swift in Sources */,
 				AC603A3C2727E9EF0072A72E /* ContentView.swift in Sources */,
+				AC29EA7D2732DADD002EB5DB /* GamePreferencesButton.swift in Sources */,
 				AC0B6B8327293A8D00D9271E /* ThumbButtons.swift in Sources */,
 				AC143C1F27313E100072DC37 /* PreferencesScreen.swift in Sources */,
+				AC8EEB362732C8A5006BA63D /* TextBubble.swift in Sources */,
 				AC603A55272820ED0072A72E /* UserProfile.swift in Sources */,
 				A051CF9D272C0181001EEC02 /* ListEventRow.swift in Sources */,
 				AC5E107527327CFE0078C680 /* ChoiceButton.swift in Sources */,
@@ -273,7 +292,9 @@
 				ACA24C9A272C1E150062F226 /* CheckMarkButton.swift in Sources */,
 				AC8EEB322732BB2A006BA63D /* FirstBootGameList.swift in Sources */,
 				AC603A57272821030072A72E /* EventRoot.swift in Sources */,
+				AC29EA7F2732DC2C002EB5DB /* SmallButtonGame.swift in Sources */,
 				ACE5C2F027297E4000CCF4F6 /* GameListComponent.swift in Sources */,
+				AC29EA812732E5EB002EB5DB /* SelectedPlayedGames.swift in Sources */,
 				A051CFA3272C0200001EEC02 /* GameCalendar.swift in Sources */,
 				ACE5C2F6272A88C900CCF4F6 /* SuggestedGames.swift in Sources */,
 				A051CF9B272C014B001EEC02 /* SearchBar.swift in Sources */,
@@ -285,7 +306,6 @@
 				AC603A59272821170072A72E /* MyList.swift in Sources */,
 				AC8EEB2E2732B53C006BA63D /* FirstBootStyle.swift in Sources */,
 				AC143C2127317EA20072DC37 /* GamePrefComponent.swift in Sources */,
-				AC86E3D7272AAAD7006051A2 /* MiniGameScreen.swift in Sources */,
 				AC5E1073273196F00078C680 /* UserForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +437,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dromspel/Preview Content\"";
-				DEVELOPMENT_TEAM = 54V4LMK5VT;
+				DEVELOPMENT_TEAM = FJ3MN7VN63;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -431,7 +451,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamteam.dromspiel.lucas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamteam.dromspiel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -447,7 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dromspel/Preview Content\"";
-				DEVELOPMENT_TEAM = 54V4LMK5VT;
+				DEVELOPMENT_TEAM = FJ3MN7VN63;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -461,7 +481,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamteam.dromspiel.lucas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamteam.dromspiel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

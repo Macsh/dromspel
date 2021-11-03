@@ -118,6 +118,7 @@ enum GameType {
     case Sport(value: Sport)
     case OpenWorld(value: OpenWorld)
     case SeeMore(value: SeeMore)
+    case Empty
 }
 
 extension GameType {
@@ -133,8 +134,67 @@ extension GameType {
             case .Sport(let sport): return sport.rawValue
             case .OpenWorld(let openWorld): return openWorld.rawValue
             case .SeeMore(let seeMore): return seeMore.rawValue
+            case .Empty: return ""
 
         }
+    }
+}
+
+//Extension
+extension GameType {
+    
+    func getStringValue() -> String {
+        return "GameType.\(self.keyString)"
+    }
+    
+    static func fromStringValue(_ value: String) -> GameType {
+        for type in dromspel.Action.allCases {
+            if type.rawValue == value {
+                return GameType.Action(value: type)
+            }
+        }
+        for type in dromspel.ActionAventure.allCases {
+            if type.rawValue == value {
+                return GameType.ActionAventure(value: type)
+            }
+        }
+        for type in dromspel.Aventure.allCases {
+            if type.rawValue == value {
+                return GameType.Aventure(value: type)
+            }
+        }
+        for type in dromspel.RPG.allCases {
+            if type.rawValue == value {
+                return GameType.RPG(value: type)
+            }
+        }
+        for type in dromspel.Simulation.allCases {
+            if type.rawValue == value {
+                return GameType.Simulation(value: type)
+            }
+        }
+        for type in dromspel.Strategy.allCases {
+            if type.rawValue == value {
+                return GameType.Strategy(value: type)
+            }
+        }
+        for type in dromspel.Reflexion.allCases {
+            if type.rawValue == value {
+                return GameType.Reflexion(value: type)
+            }
+        }
+        for type in dromspel.Sport.allCases {
+            if type.rawValue == value {
+                return GameType.Sport(value: type)
+            }
+        }
+        for type in dromspel.OpenWorld.allCases {
+            if type.rawValue == value {
+                return GameType.OpenWorld(value: type)
+            }
+        }
+        
+        return GameType.Empty
     }
 }
 
@@ -154,11 +214,11 @@ class User : ObservableObject {
     @Published var likedGames: [Int] = []
     @Published var dislikedGames: [Int] = []
     var preferences : [GameType] = [] //determiner le type
-    var experiences: [Game] = []
+    var experiences: [Int] = []
     var pseudo: String = ""
     var description: String = ""
     
-    init(gamesList: [Int] = [], history: [Int] = [],likedGames: [Int] = [],dislikedGames: [Int] = [],preferences : [GameType] = [],experiences: [Game] = [],pseudo: String = "",description: String = "") {
+    init(gamesList: [Int] = [], history: [Int] = [],likedGames: [Int] = [],dislikedGames: [Int] = [],preferences : [GameType] = [],experiences: [Int] = [],pseudo: String = "",description: String = "") {
         self.gamesList = gamesList
         self.history = history
         self.likedGames = likedGames
@@ -180,6 +240,70 @@ class User : ObservableObject {
             self.history.remove(at: pos)
         }
         self.history.append(index)
+    }
+    
+    func saveUserToUserDefault() {
+        UserDefaults.standard.set(self.pseudo, forKey: "user.pseudo")
+        UserDefaults.standard.set(self.description, forKey: "user.description")
+        UserDefaults.standard.set(self.gamesList, forKey: "user.gamesList")
+        UserDefaults.standard.set(self.history, forKey: "user.history")
+        UserDefaults.standard.set(self.likedGames, forKey: "user.likedGames")
+        UserDefaults.standard.set(self.dislikedGames, forKey: "user.dislikedGames")
+        UserDefaults.standard.set(User.getPreferencesAsStrings(self.preferences), forKey: "user.preferences")
+        UserDefaults.standard.set(self.experiences, forKey: "user.experiences")
+        
+    }
+    
+    static func getUserFromUserDefaults() -> User? {
+        var result: User?
+        
+        if let pseudo = UserDefaults.standard.string(forKey: "user.pseudo") {
+            let description = UserDefaults.standard.string(forKey: "user.description") ?? ""
+            let gamesList : [Int] = UserDefaults.standard.array(forKey: "user.gamesList") as? [Int] ?? []
+            let history : [Int] = UserDefaults.standard.array(forKey: "user.history") as? [Int] ?? []
+            let likedGames : [Int] = UserDefaults.standard.array(forKey: "user.likedGames") as? [Int] ?? []
+            let dislikedGames : [Int] = UserDefaults.standard.array(forKey: "user.dislikedGames") as? [Int] ?? []
+            let preferences: [GameType]  = User.getPreferencesFromStrings(UserDefaults.standard.array(forKey: "user.preferences") as? [String] ?? [])
+            let experiences : [Int] = UserDefaults.standard.array(forKey: "user.experiences") as? [Int] ?? []
+            
+            result = User(gamesList: gamesList, history: history, likedGames: likedGames, dislikedGames: dislikedGames, preferences: preferences, experiences: experiences, pseudo: pseudo, description: description)
+        }
+        
+        return result
+    }
+    
+    static func deleteUserFromUserDefault() {
+        UserDefaults.standard.removeObject(forKey: "user.pseudo")
+        UserDefaults.standard.removeObject(forKey: "user.description")
+        UserDefaults.standard.removeObject(forKey: "user.gamesList")
+        UserDefaults.standard.removeObject(forKey: "user.history")
+        UserDefaults.standard.removeObject(forKey: "user.likedGames")
+        UserDefaults.standard.removeObject(forKey: "user.dislikedGames")
+        UserDefaults.standard.removeObject(forKey: "user.preferences")
+        UserDefaults.standard.removeObject(forKey: "user.experiences")
+    }
+    
+    static func getPreferencesAsStrings(_  values: [GameType]) -> [String] {
+        var result: [String] = []
+        
+        for type in values {
+            result.append("GameType.\(type.keyString)")
+        }
+        
+        return result
+    }
+    
+    static func getPreferencesFromStrings(_ values: [String]) -> [GameType] {
+        var result: [GameType] = []
+        
+        for type in values {
+            if type.hasPrefix("GameType.") {
+                let typeTrimmed = type.components(separatedBy: ".")[1]
+                result.append(GameType.fromStringValue(typeTrimmed))
+            }
+        }
+        
+        return result
     }
 }
 

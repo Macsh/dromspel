@@ -52,6 +52,12 @@ struct GameScreen: View {
                             .padding()
                         
                         HStack {
+                            Image(game.pegi)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 37)
+                                .padding(.horizontal)
+                            
                             ForEach(game.platform , id: \.self) { platform in
                                 if platform == "logo-switch" {
                                     if  colorScheme == .dark {

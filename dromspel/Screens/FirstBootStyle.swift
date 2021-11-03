@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct FirstBootStyle: View {
+    @Environment(\.colorScheme) var colorScheme
+    @Binding var isValidated: Bool
+
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -44,10 +47,13 @@ struct FirstBootStyle: View {
                 ForEach(OpenWorld.allCases, id: \.self){ act in
                     GameStyleButton(gameStyle: GameType.OpenWorld(value:act), activeUser: user)
                 }
-                Text("Passez à l'étape suivante")
-            }
+             }
             .padding()
-            
+            Spacer()
+                .frame(height: 50)
+            NavigationLink (destination:FirstBootGameList(activeUser: user, isValidated: $isValidated), label:{
+            NextStepButton(textButton: "Étape Suivante     \(Image(systemName: "greaterthan"))")
+            })
             .navigationBarTitle("Style").navigationBarTitleDisplayMode(.inline).navigationViewStyle(StackNavigationViewStyle())
         }
     }
@@ -55,6 +61,6 @@ struct FirstBootStyle: View {
 
 struct FirstBootStyle_Previews: PreviewProvider {
     static var previews: some View {
-        FirstBootStyle()
+        FirstBootStyle(isValidated: .constant(false))
     }
 }
