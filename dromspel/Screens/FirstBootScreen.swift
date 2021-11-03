@@ -7,19 +7,34 @@
 
 import SwiftUI
 
+//struct NavigationConfigurator: UIViewControllerRepresentable {
+//    var configure: (UINavigationController) -> Void = { _ in }
+//
+//    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
+//        UIViewController()
+//    }
+//    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+//        if let nc = uiViewController.navigationController {
+//            self.configure(nc)
+//        }
+//    }
+//
+//}
+
 struct FirstBootScreen: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationView {
             ZStack(alignment: .top){
-                Color(red: 212 / 255, green: 230 / 255, blue: 241 / 255)
+//                Color(red: 212 / 255, green: 230 / 255, blue: 241 / 255)
+//                    .ignoresSafeArea(.all)
+                Image("Firstscreen-bg1")
+                    .resizable()
+                    .scaledToFill()
+                    .opacity(0.7)
+                    .background(Color.black)
+                    .clipped()
                     .ignoresSafeArea(.all)
-//                Image("Firstscreen-bg")
-//                    .resizable()
-//                    .scaledToFill()
-//                    .opacity(0.7)
-//                    .background(Color.black)
-//                    .clipped()
                 
                 VStack{
                     Spacer()
@@ -31,7 +46,7 @@ struct FirstBootScreen: View {
                     Spacer()
                         .frame(height: 50)
                     
-                    NavigationLink (destination:MiniGameScreen(), label:{
+                    NavigationLink (destination:UserForm(), label:{
                             ChoiceButtonQuestion()
                                 
                     })
@@ -45,6 +60,10 @@ struct FirstBootScreen: View {
             }
             
             .navigationBarTitle("Faites votre choix").navigationBarTitleDisplayMode(.inline).navigationViewStyle(StackNavigationViewStyle())
+                
+//            .background(NavigationConfigurator { nc in
+//                            nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+//                        })
 //            .navigationBarHidden(true)
             
         }
