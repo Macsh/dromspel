@@ -102,6 +102,10 @@ enum OpenWorld: String, CaseIterable {
     case openWorld = "Monde ouvert"
 }
 
+enum SeeMore: String, CaseIterable {
+    case more = "Voir plus..."
+}
+
 enum GameType {
     
     case Action(value: Action)
@@ -113,7 +117,7 @@ enum GameType {
     case Reflexion(value: Reflexion)
     case Sport(value: Sport)
     case OpenWorld(value: OpenWorld)
-    
+    case SeeMore(value: SeeMore)
 }
 
 extension GameType {
@@ -128,6 +132,8 @@ extension GameType {
             case .Reflexion(let reflexion): return reflexion.rawValue
             case .Sport(let sport): return sport.rawValue
             case .OpenWorld(let openWorld): return openWorld.rawValue
+            case .SeeMore(let seeMore): return seeMore.rawValue
+
         }
     }
 }

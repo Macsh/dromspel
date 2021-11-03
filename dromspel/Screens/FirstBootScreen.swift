@@ -28,13 +28,23 @@ struct FirstBootScreen: View {
             ZStack(alignment: .top){
 //                Color(red: 212 / 255, green: 230 / 255, blue: 241 / 255)
 //                    .ignoresSafeArea(.all)
-                Image("Firstscreen-bg1")
+                if (colorScheme == .dark) {
+                Image("Firstscreen-bg-darkmode")
                     .resizable()
                     .scaledToFill()
                     .opacity(0.7)
                     .background(Color.black)
                     .clipped()
-                    .ignoresSafeArea(.all)
+                    .ignoresSafeArea(.all) }
+                else {
+                    Image("Firstscreen-bg-lightmode")
+                        .resizable()
+                        .scaledToFill()
+                        .opacity(0.7)
+                        .background(Color.black)
+                        .clipped()
+                        .ignoresSafeArea(.all) }
+                
                 
                 VStack{
                     Spacer()

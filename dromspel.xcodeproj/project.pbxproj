@@ -36,6 +36,8 @@
 		AC603A57272821030072A72E /* EventRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A56272821030072A72E /* EventRoot.swift */; };
 		AC603A59272821170072A72E /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A58272821170072A72E /* MyList.swift */; };
 		AC86E3D7272AAAD7006051A2 /* MiniGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86E3D6272AAAD7006051A2 /* MiniGameScreen.swift */; };
+		AC8EEB2E2732B53C006BA63D /* FirstBootStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EEB2D2732B53C006BA63D /* FirstBootStyle.swift */; };
+		AC8EEB322732BB2A006BA63D /* FirstBootGameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EEB312732BB2A006BA63D /* FirstBootGameList.swift */; };
 		ACA24C9A272C1E150062F226 /* CheckMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA24C99272C1E150062F226 /* CheckMarkButton.swift */; };
 		ACE5C2F027297E4000CCF4F6 /* GameListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5C2EF27297E4000CCF4F6 /* GameListComponent.swift */; };
 		ACE5C2F42729840600CCF4F6 /* FirstBootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5C2F32729840600CCF4F6 /* FirstBootScreen.swift */; };
@@ -73,6 +75,8 @@
 		AC603A56272821030072A72E /* EventRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRoot.swift; sourceTree = "<group>"; };
 		AC603A58272821170072A72E /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
 		AC86E3D6272AAAD7006051A2 /* MiniGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameScreen.swift; sourceTree = "<group>"; };
+		AC8EEB2D2732B53C006BA63D /* FirstBootStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBootStyle.swift; sourceTree = "<group>"; };
+		AC8EEB312732BB2A006BA63D /* FirstBootGameList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBootGameList.swift; sourceTree = "<group>"; };
 		ACA24C99272C1E150062F226 /* CheckMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkButton.swift; sourceTree = "<group>"; };
 		ACE5C2EF27297E4000CCF4F6 /* GameListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListComponent.swift; sourceTree = "<group>"; };
 		ACE5C2F32729840600CCF4F6 /* FirstBootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBootScreen.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				AC603A54272820ED0072A72E /* UserProfile.swift */,
 				AC143C1E27313E100072DC37 /* PreferencesScreen.swift */,
 				AC5E1072273196F00078C680 /* UserForm.swift */,
+				AC8EEB2D2732B53C006BA63D /* FirstBootStyle.swift */,
+				AC8EEB312732BB2A006BA63D /* FirstBootGameList.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 				A051CFA1272C01DE001EEC02 /* GameCalendarListSeparator.swift in Sources */,
 				AC143C232731886A0072DC37 /* StyleFirstScreen.swift in Sources */,
 				ACA24C9A272C1E150062F226 /* CheckMarkButton.swift in Sources */,
+				AC8EEB322732BB2A006BA63D /* FirstBootGameList.swift in Sources */,
 				AC603A57272821030072A72E /* EventRoot.swift in Sources */,
 				ACE5C2F027297E4000CCF4F6 /* GameListComponent.swift in Sources */,
 				A051CFA3272C0200001EEC02 /* GameCalendar.swift in Sources */,
@@ -276,6 +283,7 @@
 				AC603A4B2727EC790072A72E /* Database.swift in Sources */,
 				AC603A3A2727E9EF0072A72E /* dromspelApp.swift in Sources */,
 				AC603A59272821170072A72E /* MyList.swift in Sources */,
+				AC8EEB2E2732B53C006BA63D /* FirstBootStyle.swift in Sources */,
 				AC143C2127317EA20072DC37 /* GamePrefComponent.swift in Sources */,
 				AC86E3D7272AAAD7006051A2 /* MiniGameScreen.swift in Sources */,
 				AC5E1073273196F00078C680 /* UserForm.swift in Sources */,

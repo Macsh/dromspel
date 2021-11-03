@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PreferencesScreen: View {
     @ObservedObject var activeUser : User
-    @State var selection: Int = 1
+    @State var selection: Int = 0
     @State var bindingSearch: String
     @State var navigationViewAreActive: [Bool] = Array(repeating: false, count: games.count)
     let columns = [

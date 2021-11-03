@@ -42,7 +42,7 @@ struct ChoiceButton: View {
                     
                     StyleFirstScreen(gameStyle: GameType.Action(value:.FPS), activeUser: user)
                         .padding()
-                    StyleFirstScreen(gameStyle: GameType.OpenWorld(value:.openWorld), activeUser: user)
+                    StyleFirstScreen(gameStyle: GameType.SeeMore(value:.more), activeUser: user)
                         .padding()
                     
                     
