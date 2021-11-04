@@ -120,52 +120,62 @@ struct GameScreen: View {
                         ScrollView (.horizontal) {
                             HStack (spacing: 60) {
                                 Spacer(minLength: -30).id(horizontalID)
+                                
+                                Button(action: {
+                                    proxy.scrollTo(topID)
+                                    proxy.scrollTo(horizontalID)
+                                    game = games[uniqueNumbers[0]]
+                                    self.activeUser.addGameToHistory(uniqueNumbers[0])
+                                    self.uniqueNumbers = suggerer(5)
+                                }, label: {
+                                    
                                 SuggestedGames(game:games[uniqueNumbers[0]], activeUser: activeUser)
                                     .frame(height: 185)
-                                    .onTapGesture {
-                                        proxy.scrollTo(topID)
-                                        proxy.scrollTo(horizontalID)
-                                        game = games[uniqueNumbers[0]]
-                                        self.activeUser.addGameToHistory(uniqueNumbers[0])
-                                        self.uniqueNumbers = suggerer(5)
-                                    }
+                            })
+                                
+                                Button(action: {
+                                    proxy.scrollTo(topID)
+                                    proxy.scrollTo(horizontalID)
+                                    game = games[uniqueNumbers[1]]
+                                    self.activeUser.addGameToHistory(uniqueNumbers[1])
+                                    self.uniqueNumbers = suggerer(5)
+                                }, label: {
                                 SuggestedGames(game:games[uniqueNumbers[1]], activeUser: activeUser)
                                     .frame(height: 185)
-                                    .onTapGesture {
-                                        proxy.scrollTo(topID)
-                                        proxy.scrollTo(horizontalID)
-                                        game = games[uniqueNumbers[1]]
-                                        self.activeUser.addGameToHistory(uniqueNumbers[1])
-                                        self.uniqueNumbers = suggerer(5)
-                                    }
+                                })
+                                
+                                Button(action: {
+                                    proxy.scrollTo(topID)
+                                    proxy.scrollTo(horizontalID)
+                                    game = games[uniqueNumbers[2]]
+                                    self.activeUser.addGameToHistory(uniqueNumbers[2])
+                                    self.uniqueNumbers = suggerer(5)
+                                }, label: {
                                 SuggestedGames(game:games[uniqueNumbers[2]], activeUser: activeUser)
                                     .frame(height: 185)
-                                    .onTapGesture {
-                                        proxy.scrollTo(topID)
-                                        proxy.scrollTo(horizontalID)
-                                        game = games[uniqueNumbers[2]]
-                                        self.activeUser.addGameToHistory(uniqueNumbers[2])
-                                        self.uniqueNumbers = suggerer(5)
-                                    }
+                                })
+                                
+                                Button(action: {
+                                    proxy.scrollTo(topID)
+                                    proxy.scrollTo(horizontalID)
+                                    game = games[uniqueNumbers[3]]
+                                    self.activeUser.addGameToHistory(uniqueNumbers[3])
+                                    self.uniqueNumbers = suggerer(5)
+                                }, label: {
                                 SuggestedGames(game:games[uniqueNumbers[3]], activeUser: activeUser)
                                     .frame(height: 185)
-                                    .onTapGesture {
-                                        proxy.scrollTo(topID)
-                                        proxy.scrollTo(horizontalID)
-                                        game = games[uniqueNumbers[3]]
-                                        self.activeUser.addGameToHistory(uniqueNumbers[3])
-                                        self.uniqueNumbers = suggerer(5)
-                                    }
+                                })
+                                
+                                Button(action: {
+                                    proxy.scrollTo(topID)
+                                    proxy.scrollTo(horizontalID)
+                                    game = games[uniqueNumbers[4]]
+                                    self.activeUser.addGameToHistory(uniqueNumbers[4])
+                                    self.uniqueNumbers = suggerer(5)
+                                }, label: {
                                 SuggestedGames(game:games[uniqueNumbers[4]], activeUser: activeUser)
                                     .frame(height: 185)
-                                    .onTapGesture {
-                                        proxy.scrollTo(topID)
-                                        proxy.scrollTo(horizontalID)
-                                        game = games[uniqueNumbers[4]]
-                                        self.activeUser.addGameToHistory(uniqueNumbers[4])
-                                        self.uniqueNumbers = suggerer(5)
-                                        
-                                    }
+                                })
                                 Spacer(minLength: -30)
                             }
                             .padding()

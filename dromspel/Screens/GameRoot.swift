@@ -7,29 +7,8 @@
 
 import SwiftUI
 
-struct SheetView: View {
-    @Binding var showing : Bool
-    @Binding var pegiEmpty: String
-    var body: some View {
-        VStack {
-            Button("Press to dismiss") {
-                showing = false
-            }
-            .font(.title)
-            .padding()
-            .background(Color.black)
-            
-            Button(action: {
-                pegiEmpty = "PEGI 3"
-            }, label: {
-                Text("PEGI 3")
-            })
-        }
-        
-    }
-}
-
 struct GameRoot: View {
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var activeUser : User
     //On crée un tableau de Bool qui nous servira pour les bindings des NavigationLinks
     //On utilise l'initialisateur Array
@@ -50,6 +29,7 @@ struct GameRoot: View {
     @State var ButtonSelection6 : Bool = false
     @State var ButtonSelection7 : Bool = false
     @State var ButtonSelection8 : Bool = false
+    //Pour les boutons qu'on fait pas mtn
     @State var ButtonsType: [Bool] = Array(repeating: false, count: 36)
     @State var searchToggle: Bool = false
     @State var bindingSearch = ""
@@ -58,13 +38,18 @@ struct GameRoot: View {
     init(activeUser: User) {
         self.activeUser = activeUser
         
-        self._filteredPegi = State(initialValue: games.filter { game in return pegiEmpty.contains(game.pegi) || pegiEmpty.count == 0 })
-        
-        self._filteredType = State(initialValue: self.filteredPegi.filter { game in
-            return self.typeEmpty.contains(where: {g in return g.keyString ==  game.type.keyString})
+        self._filteredPegi = State(initialValue: games.filter { game in
+                return pegiEmpty.contains(game.pegi) || self.pegiEmpty.count == 0
         })
         
-        self._filteredPlatform = State(initialValue: self.filteredType.filter { game in return self.platformEmpty.filter({g in return game.platform.contains(g)}).count > 0 })
+        self._filteredPlatform = State(initialValue: filteredPegi.filter { game in
+            return game.platform.filter({g in
+                return self.platformEmpty.contains(where: { platform in
+                    return platform == g
+                }) || self.platformEmpty.count == 0
+                
+            }).count > 0
+        })
     }
     
     var body: some View {
@@ -92,7 +77,7 @@ struct GameRoot: View {
                         }
                     }
                     else {
-                        ForEach(Array(self.filteredPegi.enumerated()), id: \.offset){ index, games in
+                        ForEach(Array(self.filteredPlatform.enumerated()), id: \.offset){ index, games in
                             Spacer(minLength: 50)
                             
                             NavigationLink(destination: GameScreen(game: games, activeUser: user), isActive: $navigationViewAreActive[index]) {
@@ -114,13 +99,23 @@ struct GameRoot: View {
                                 showingSheet.toggle()
                                 
                             } , label: {
-                                Image("funnel-logo")
+                                
+                                if colorScheme == .dark {
+                                    Image("funnel-logo")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 30)
+                                    .colorInvert()
+                                }
+                                else {
+                                    Image("funnel-logo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 30)
+                                }
                             })
                                 .sheet(isPresented: $showingSheet) {
-                                    FilterElement(pegiEmpty:$pegiEmpty, typeEmpty:$typeEmpty, platformEmpty:$platformEmpty, ButtonSelection: $ButtonSelection, ButtonSelection1: $ButtonSelection1, ButtonSelection2: $ButtonSelection2, ButtonSelection3: $ButtonSelection3, ButtonSelection4: $ButtonSelection4, ButtonSelection5: $ButtonSelection5, ButtonSelection6: $ButtonSelection6, ButtonSelection7: $ButtonSelection7, ButtonSelection8: $ButtonSelection8, ButtonsType: $ButtonsType)
+                                    FilterElement(showing: $showingSheet,pegiEmpty:$pegiEmpty, typeEmpty:$typeEmpty, platformEmpty:$platformEmpty, ButtonSelection: $ButtonSelection, ButtonSelection1: $ButtonSelection1, ButtonSelection2: $ButtonSelection2, ButtonSelection3: $ButtonSelection3, ButtonSelection4: $ButtonSelection4, ButtonSelection5: $ButtonSelection5, ButtonSelection6: $ButtonSelection6, ButtonSelection7: $ButtonSelection7, ButtonSelection8: $ButtonSelection8, ButtonsType: $ButtonsType)
                                 }
                             
                         }
@@ -138,10 +133,32 @@ struct GameRoot: View {
                         }
                     }
                 }
-            }
+            .onChange(of: self.pegiEmpty, perform: { value in
+                self.filteredPegi = games.filter { game in return value.contains(game.pegi) || value.count == 0 }
+                    
+                    self.filteredPlatform = self.filteredPegi.filter { game in
+                        return game.platform.filter({g in
+                            return self.platformEmpty.contains(where: { platform in
+                                return platform == g
+                            }) || self.platformEmpty.count == 0
+                            
+                        }).count > 0
+                    }
+                })
+            .onChange(of: self.platformEmpty, perform: { value in
+                self.filteredPlatform = self.filteredPegi.filter { game in
+                    return game.platform.filter({g in
+                        return value.contains(where: { platform in
+                            return platform == g
+                        }) || value.count == 0
+                        
+                    }).count > 0
+                }
+            })
             
         }
     }
+}
 
 
 struct GameRoot_Previews: PreviewProvider {
@@ -149,3 +166,4 @@ struct GameRoot_Previews: PreviewProvider {
         GameRoot(activeUser: user)
     }
 }
+

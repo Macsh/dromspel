@@ -9,10 +9,18 @@ import SwiftUI
 
 struct GameStyleButton: View {
     var gameStyle : GameType
+    @State var animationAmount = 1.0
     @State var binding: Bool = false
+    @State var isPressed: Bool = false
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var activeUser : User
     var body: some View {
+        Button(action: {
+            self.binding.toggle()
+
+        }, label: {
+            
+        
             ZStack {
                 Image(gameStyle.keyString)
                         .resizable()
@@ -46,10 +54,9 @@ struct GameStyleButton: View {
                     }
                 }
             }
-            .onTapGesture(perform: {
-                self.binding.toggle()
-            })
             .frame(width: 120, height: 70)
+        
+        })
         }
 }
 

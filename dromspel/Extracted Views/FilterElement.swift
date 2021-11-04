@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FilterElement: View {
+    @Binding var showing: Bool
+    
     @Binding var pegiEmpty: [String]
     @Binding var typeEmpty : [GameType]
     @Binding var platformEmpty : [String]
@@ -28,11 +30,39 @@ struct FilterElement: View {
         GridItem(.flexible()),
        ]
     var body: some View {
+        VStack{
+                HStack{
+                    Button(action: {
+                        showing = false
+                    }, label: {
+                        Image(systemName: "chevron.backward")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 25)
+                            .padding(.horizontal)
+                            .padding(.top)
+                            .opacity(ButtonSelection ? 0.5: 1)
+
+                    })
+                    Spacer()
+                }
         ScrollView {
             Text("Pegi")
+                .font(.system(size: 17, weight: .bold))
+                .padding(10)
+                .frame(width: 400)
+                .background(Color.black)
+                .foregroundColor(.white)
             HStack{
                 Button(action: {
-                    pegiEmpty.append("PEGI 3")
+                    if ButtonSelection {
+                        if let index = pegiEmpty.firstIndex(of: "PEGI 3") {
+                            pegiEmpty.remove(at: index)
+                        }
+                    }
+                    else {
+                        pegiEmpty.append("PEGI 3")
+                    }
                     ButtonSelection.toggle()
                 }, label: {
                     Image("PEGI 3")
@@ -41,10 +71,18 @@ struct FilterElement: View {
                         .frame(height: 40)
                         .padding(.horizontal)
                         .opacity(ButtonSelection ? 0.5: 1)
+                        .animation(.easeInOut(duration: 0.75))
                     
                 })
                 Button(action: {
-                    pegiEmpty.append("PEGI 7")
+                    if ButtonSelection1 {
+                        if let index = pegiEmpty.firstIndex(of: "PEGI 7") {
+                            pegiEmpty.remove(at: index)
+                        }
+                    }
+                    else {
+                        pegiEmpty.append("PEGI 7")
+                    }
                     ButtonSelection1.toggle()
                 }, label: {
                     Image("PEGI 7")
@@ -53,9 +91,17 @@ struct FilterElement: View {
                         .frame(height: 40)
                         .padding(.horizontal)
                         .opacity(ButtonSelection1 ? 0.5: 1)
+                        .animation(.easeInOut(duration: 0.75))
                 })
                 Button(action: {
-                    pegiEmpty.append("PEGI 12")
+                    if ButtonSelection2 {
+                        if let index = pegiEmpty.firstIndex(of: "PEGI 12") {
+                            pegiEmpty.remove(at: index)
+                        }
+                    }
+                    else {
+                        pegiEmpty.append("PEGI 12")
+                    }
                     ButtonSelection2.toggle()
                 }, label: {
                     Image("PEGI 12")
@@ -64,9 +110,17 @@ struct FilterElement: View {
                         .frame(height: 40)
                         .padding(.horizontal)
                         .opacity(ButtonSelection2 ? 0.5: 1)
+                        .animation(.easeInOut(duration: 0.75))
                 })
                 Button(action: {
-                    pegiEmpty.append("PEGI 16")
+                    if ButtonSelection3 {
+                        if let index = pegiEmpty.firstIndex(of: "PEGI 16") {
+                            pegiEmpty.remove(at: index)
+                        }
+                    }
+                    else {
+                        pegiEmpty.append("PEGI 16")
+                    }
                     ButtonSelection3.toggle()
                 }, label: {
                     Image("PEGI 16")
@@ -75,9 +129,17 @@ struct FilterElement: View {
                         .frame(height: 40)
                         .padding(.horizontal)
                         .opacity(ButtonSelection3 ? 0.5: 1)
+                        .animation(.easeInOut(duration: 0.75))
                 })
                 Button(action: {
-                    pegiEmpty.append("PEGI 18")
+                    if ButtonSelection4 {
+                        if let index = pegiEmpty.firstIndex(of: "PEGI 18") {
+                            pegiEmpty.remove(at: index)
+                        }
+                    }
+                    else {
+                        pegiEmpty.append("PEGI 18")
+                    }
                     ButtonSelection4.toggle()
                 }, label: {
                     Image("PEGI 18")
@@ -86,13 +148,27 @@ struct FilterElement: View {
                         .frame(height: 40)
                         .padding(.horizontal)
                         .opacity(ButtonSelection4 ? 0.5: 1)
+                        .animation(.easeInOut(duration: 0.75))
                 })
             }
-            
+            .padding(.top)
+            .padding(.bottom)
             Text("Plateforme")
+                .font(.system(size: 17, weight: .bold))
+                .padding(10)
+                .frame(width: 400)
+                .background(Color.black)
+                .foregroundColor(.white)
             HStack{
                 Button(action: {
-                    platformEmpty.append("logo-switch")
+                    if ButtonSelection5 {
+                        if let index = platformEmpty.firstIndex(of: "logo-switch") {
+                            platformEmpty.remove(at: index)
+                        }
+                    }
+                    else {
+                        platformEmpty.append("logo-switch")
+                    }
                     ButtonSelection5.toggle()
                 }, label: {
                     if  colorScheme == .dark {
@@ -103,6 +179,7 @@ struct FilterElement: View {
                             .colorInvert()
                             .padding(.horizontal)
                             .opacity(ButtonSelection5 ? 0.5: 1)
+                            .animation(.easeInOut(duration: 0.75))
                     } else {
                         Image("logo-switch")
                             .resizable()
@@ -110,10 +187,18 @@ struct FilterElement: View {
                             .frame(height: 42)
                             .padding(.horizontal)
                             .opacity(ButtonSelection5 ? 0.5: 1)
+                            .animation(.easeInOut(duration: 0.75))
                     }
                 })
                 Button(action: {
-                    platformEmpty.append("logo.playstation")
+                    if ButtonSelection6 {
+                        if let index = platformEmpty.firstIndex(of: "logo.playstation") {
+                            platformEmpty.remove(at: index)
+                        }
+                    }
+                    else {
+                        platformEmpty.append("logo.playstation")
+                    }
                     ButtonSelection6.toggle()
                 }, label: {
                     Image(systemName: "logo.playstation")
@@ -121,10 +206,19 @@ struct FilterElement: View {
                         .scaledToFit()
                         .frame(height: 40)
                         .padding(.horizontal)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                         .opacity(ButtonSelection6 ? 0.5: 1)
+                        .animation(.easeInOut(duration: 0.75))
                 })
                 Button(action: {
-                    platformEmpty.append("logo.xbox")
+                    if ButtonSelection7 {
+                        if let index = platformEmpty.firstIndex(of: "logo.xbox") {
+                            platformEmpty.remove(at: index)
+                        }
+                    }
+                    else {
+                        platformEmpty.append("logo.xbox")
+                    }
                     ButtonSelection7.toggle()
                 }, label: {
                     Image(systemName: "logo.xbox")
@@ -132,10 +226,19 @@ struct FilterElement: View {
                         .scaledToFit()
                         .frame(height: 40)
                         .padding(.horizontal)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                         .opacity(ButtonSelection7 ? 0.5: 1)
+                        .animation(.easeInOut(duration: 0.75))
                 })
                 Button(action: {
-                    platformEmpty.append("desktopcomputer")
+                    if ButtonSelection8 {
+                        if let index = platformEmpty.firstIndex(of: "desktopcomputer") {
+                            platformEmpty.remove(at: index)
+                        }
+                    }
+                    else {
+                        platformEmpty.append("desktopcomputer")
+                    }
                     ButtonSelection8.toggle()
                 }, label: {
                     Image(systemName: "desktopcomputer")
@@ -143,11 +246,19 @@ struct FilterElement: View {
                         .scaledToFit()
                         .frame(height: 40)
                         .padding(.horizontal)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                         .opacity(ButtonSelection8 ? 0.5: 1)
+                        .animation(.easeInOut(duration: 0.75))
                 })
             }
-            
+            .padding(.top)
+            .padding(.bottom)
             Text("Type")
+                .font(.system(size: 17, weight: .bold))
+                .padding(10)
+                .frame(width: 400)
+                .background(Color.black)
+                .foregroundColor(.white)
             
             LazyVGrid(columns: columns, spacing: 50) {
                 
@@ -218,6 +329,7 @@ struct FilterElement: View {
                 })
             }
             .padding()
+            .padding(.top)
                 LazyVGrid(columns: columns, spacing: 50) {
 
                 Button(action: {
@@ -392,11 +504,14 @@ struct FilterElement: View {
             .padding()
             .padding(.top,10)
         }
+        }
     }
 }
 
 struct FilterElement_Previews: PreviewProvider {
     static var previews: some View {
-        FilterElement(pegiEmpty: .constant([""]), typeEmpty: .constant([GameType.Empty]), platformEmpty: .constant([""]), ButtonSelection: .constant(false), ButtonSelection1: .constant(false), ButtonSelection2: .constant(false), ButtonSelection3: .constant(false), ButtonSelection4: .constant(false), ButtonSelection5: .constant(false), ButtonSelection6: .constant(false), ButtonSelection7: .constant(false), ButtonSelection8: .constant(false), ButtonsType: .constant([]))
+        FilterElement(showing: .constant(false), pegiEmpty: .constant([""]), typeEmpty: .constant([GameType.Empty]), platformEmpty: .constant([""]), ButtonSelection: .constant(false), ButtonSelection1: .constant(false), ButtonSelection2: .constant(false), ButtonSelection3: .constant(false), ButtonSelection4: .constant(false), ButtonSelection5: .constant(false), ButtonSelection6: .constant(false), ButtonSelection7: .constant(false), ButtonSelection8: .constant(false), ButtonsType: .constant([]))
+            //.preferredColorScheme(.dark)
     }
 }
+

@@ -31,6 +31,7 @@ struct UserForm: View {
         self._selectedGender = State(initialValue: self.activeUser.playerInfo)
         self._selectedPlayer = State(initialValue: self.activeUser.playerType)
         self._selectedMotivation = State(initialValue: self.activeUser.motivation)
+        self._selectedType = State(initialValue: self.activeUser.preferedGames)
     }
 
     var body: some View {
@@ -124,6 +125,7 @@ struct UserForm_Previews: PreviewProvider {
 
     }
 }
+
 
 
 

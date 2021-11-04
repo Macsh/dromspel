@@ -23,7 +23,7 @@ struct PreferencesScreen: View {
                 Picker("", selection: $selection) {
                     Text("Style de jeu")
                         .tag(0)
-                    Text("Jeu déjà joué")
+                    Text("Jeux Aimés")
                         .tag(1)
                     
                 }

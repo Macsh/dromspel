@@ -2,7 +2,7 @@
 //  MiniGame.swift
 //  dromspiel
 //
-//  Created by gibril on 27/10/2021.
+//  Created by alexandre on 27/10/2021.
 //
 
 import SwiftUI
