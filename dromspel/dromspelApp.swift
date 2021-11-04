@@ -29,8 +29,10 @@ struct dromspelApp: App {
         WindowGroup {
             if firstLaunch && !validated {
                 FirstBootScreen(isValidated: $validated)
+                    .preferredColorScheme(.dark)
             } else {
                 ContentView()
+                    .preferredColorScheme(.dark)
             }
         }
     }

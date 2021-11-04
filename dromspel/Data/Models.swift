@@ -207,18 +207,23 @@ enum Pegi: String {
 }
 
 
+
 //Structure utilisateur
 class User : ObservableObject {
     @Published var gamesList: [Int] = []
     @Published var history: [Int] = []
     @Published var likedGames: [Int] = []
     @Published var dislikedGames: [Int] = []
-    var preferences : [GameType] = [] //determiner le type
+    var preferences : [GameType] = []
     var experiences: [Int] = []
     var pseudo: String = ""
     var description: String = ""
+    var motivation: Motivation
+    var playerType: WhichPlayer
+    var playerInfo: AreYou
+    var preferedGames: GameTypeTitles
     
-    init(gamesList: [Int] = [], history: [Int] = [],likedGames: [Int] = [],dislikedGames: [Int] = [],preferences : [GameType] = [],experiences: [Int] = [],pseudo: String = "",description: String = "") {
+    init(gamesList: [Int] = [], history: [Int] = [],likedGames: [Int] = [],dislikedGames: [Int] = [],preferences : [GameType] = [],experiences: [Int] = [],pseudo: String = "",description: String = "", motivation: Motivation = Motivation.autre, playerType: WhichPlayer = WhichPlayer.autre, playerInfo: AreYou = AreYou.both, preferedGames: GameTypeTitles = GameTypeTitles.autre) {
         self.gamesList = gamesList
         self.history = history
         self.likedGames = likedGames
@@ -227,6 +232,10 @@ class User : ObservableObject {
         self.experiences = experiences
         self.pseudo = pseudo
         self.description = description
+        self.motivation = motivation
+        self.playerType = playerType
+        self.playerInfo = playerInfo
+        self.preferedGames = preferedGames
     }
     
     func addGameToHistory(_ game: Game) {
@@ -240,6 +249,11 @@ class User : ObservableObject {
             self.history.remove(at: pos)
         }
         self.history.append(index)
+        UserDefaults.standard.set(self.history, forKey: "user.history")
+    }
+    
+    static func saveSpecificUserDefault(_ variable : Any?, forKey: String) {
+        UserDefaults.standard.set(variable, forKey: forKey)
     }
     
     func saveUserToUserDefault() {
@@ -251,7 +265,10 @@ class User : ObservableObject {
         UserDefaults.standard.set(self.dislikedGames, forKey: "user.dislikedGames")
         UserDefaults.standard.set(User.getPreferencesAsStrings(self.preferences), forKey: "user.preferences")
         UserDefaults.standard.set(self.experiences, forKey: "user.experiences")
-        
+        UserDefaults.standard.set(self.motivation.rawValue, forKey: "user.motivation")
+        UserDefaults.standard.set(self.playerType.rawValue, forKey: "user.playerType")
+        UserDefaults.standard.set(self.playerInfo.rawValue, forKey: "user.playerInfo")
+        UserDefaults.standard.set(self.preferedGames.rawValue, forKey: "user.preferedGames")
     }
     
     static func getUserFromUserDefaults() -> User? {
@@ -265,8 +282,12 @@ class User : ObservableObject {
             let dislikedGames : [Int] = UserDefaults.standard.array(forKey: "user.dislikedGames") as? [Int] ?? []
             let preferences: [GameType]  = User.getPreferencesFromStrings(UserDefaults.standard.array(forKey: "user.preferences") as? [String] ?? [])
             let experiences : [Int] = UserDefaults.standard.array(forKey: "user.experiences") as? [Int] ?? []
+            let motivation : Motivation = Motivation(rawValue: UserDefaults.standard.string(forKey: "user.motivation") ?? "autre") ?? Motivation.autre
+            let playerType : WhichPlayer = WhichPlayer(rawValue: UserDefaults.standard.string(forKey: "user.playerType") ?? "autre") ?? WhichPlayer.autre
+            let playerInfo : AreYou = AreYou(rawValue: UserDefaults.standard.string(forKey: "user.playerInfo") ?? "both") ?? AreYou.both
+            let preferedGames : GameTypeTitles = GameTypeTitles(rawValue: UserDefaults.standard.string(forKey: "user.preferedGames") ?? "autre") ?? GameTypeTitles.autre
             
-            result = User(gamesList: gamesList, history: history, likedGames: likedGames, dislikedGames: dislikedGames, preferences: preferences, experiences: experiences, pseudo: pseudo, description: description)
+            result = User(gamesList: gamesList, history: history, likedGames: likedGames, dislikedGames: dislikedGames, preferences: preferences, experiences: experiences, pseudo: pseudo, description: description, motivation: motivation, playerType: playerType, playerInfo: playerInfo, preferedGames: preferedGames)
         }
         
         return result
@@ -281,6 +302,10 @@ class User : ObservableObject {
         UserDefaults.standard.removeObject(forKey: "user.dislikedGames")
         UserDefaults.standard.removeObject(forKey: "user.preferences")
         UserDefaults.standard.removeObject(forKey: "user.experiences")
+        UserDefaults.standard.removeObject(forKey: "user.motivation")
+        UserDefaults.standard.removeObject(forKey: "user.playerType")
+        UserDefaults.standard.removeObject(forKey: "user.playerInfo")
+        UserDefaults.standard.removeObject(forKey: "user.preferedGames")
     }
     
     static func getPreferencesAsStrings(_  values: [GameType]) -> [String] {
@@ -321,6 +346,7 @@ enum Motivation: String, CaseIterable, Identifiable {
 enum WhichPlayer: String, CaseIterable, Identifiable {
     case jeuxCollectifs
     case egotrip
+    case autre
 
     var id: String { self.rawValue }
 }
@@ -345,6 +371,8 @@ enum GameTypeTitles: String, CaseIterable, Identifiable {
     case reflexion
     case sport
     case openworld
+    
+    case autre
 
     var id: String { self.rawValue }
 

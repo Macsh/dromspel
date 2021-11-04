@@ -98,6 +98,7 @@ fileprivate struct ThumbUp: View {
 
             self.isValidated.toggle() //On change l'état de validation du bouton
             drawOtherThumb = !self.isValidated // On indique si il faut dessiner l'autre pouce ou non en fonction de l'état de validation du ce bouton (par exemple si ce bouton est coché, alors l'autre pouce disparaîtra)
+            User.saveSpecificUserDefault(activeUser.likedGames, forKey: "user.likedGames")
         }
     }
     
@@ -200,6 +201,7 @@ fileprivate struct ThumbDown: View {
             
             self.isValidated.toggle() //On change l'état de validation du bouton
             drawOtherThumb = !self.isValidated // On indique si il faut dessiner l'autre pouce ou non en fonction de l'état de validation du ce bouton (par exemple si ce bouton est coché, alors l'autre pouce disparaîtra)
+            User.saveSpecificUserDefault(activeUser.dislikedGames, forKey: "user.likedGames")
         }
     }
     

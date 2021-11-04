@@ -39,6 +39,8 @@
 		AC603A55272820ED0072A72E /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A54272820ED0072A72E /* UserProfile.swift */; };
 		AC603A57272821030072A72E /* EventRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A56272821030072A72E /* EventRoot.swift */; };
 		AC603A59272821170072A72E /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC603A58272821170072A72E /* MyList.swift */; };
+		AC69237D2733E823004D02A8 /* FilterElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69237C2733E823004D02A8 /* FilterElement.swift */; };
+		AC69237F27341A15004D02A8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC69237E27341A15004D02A8 /* Launch Screen.storyboard */; };
 		AC8EEB2E2732B53C006BA63D /* FirstBootStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EEB2D2732B53C006BA63D /* FirstBootStyle.swift */; };
 		AC8EEB322732BB2A006BA63D /* FirstBootGameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EEB312732BB2A006BA63D /* FirstBootGameList.swift */; };
 		AC8EEB342732BCD9006BA63D /* NextStepButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EEB332732BCD9006BA63D /* NextStepButton.swift */; };
@@ -83,6 +85,9 @@
 		AC603A54272820ED0072A72E /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		AC603A56272821030072A72E /* EventRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRoot.swift; sourceTree = "<group>"; };
 		AC603A58272821170072A72E /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
+		AC69237C2733E823004D02A8 /* FilterElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterElement.swift; sourceTree = "<group>"; };
+		AC69237E27341A15004D02A8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		AC69238027341B22004D02A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AC8EEB2D2732B53C006BA63D /* FirstBootStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBootStyle.swift; sourceTree = "<group>"; };
 		AC8EEB312732BB2A006BA63D /* FirstBootGameList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBootGameList.swift; sourceTree = "<group>"; };
 		AC8EEB332732BCD9006BA63D /* NextStepButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepButton.swift; sourceTree = "<group>"; };
@@ -123,6 +128,7 @@
 		AC603A382727E9EF0072A72E /* dromspel */ = {
 			isa = PBXGroup;
 			children = (
+				AC69238027341B22004D02A8 /* Info.plist */,
 				AC603A4D2727EC990072A72E /* Screens */,
 				AC603A4C2727EC800072A72E /* Extracted Views */,
 				AC603A472727EC370072A72E /* Data */,
@@ -158,6 +164,7 @@
 				ACA24C99272C1E150062F226 /* CheckMarkButton.swift */,
 				AC5E107427327CFE0078C680 /* ChoiceButton.swift */,
 				AC5E1076273282560078C680 /* ChoiceButtonQuestion.swift */,
+				AC69237C2733E823004D02A8 /* FilterElement.swift */,
 				A051CFA0272C01DE001EEC02 /* GameCalendarListSeparator.swift */,
 				ACE5C2EF27297E4000CCF4F6 /* GameListComponent.swift */,
 				AC143C2027317EA20072DC37 /* GamePrefComponent.swift */,
@@ -195,6 +202,7 @@
 				AC143C1E27313E100072DC37 /* PreferencesScreen.swift */,
 				AC5E1072273196F00078C680 /* UserForm.swift */,
 				AC603A54272820ED0072A72E /* UserProfile.swift */,
+				AC69237E27341A15004D02A8 /* Launch Screen.storyboard */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC69237F27341A15004D02A8 /* Launch Screen.storyboard in Resources */,
 				AC603A412727E9F20072A72E /* Preview Assets.xcassets in Resources */,
 				AC603A3E2727E9F20072A72E /* Assets.xcassets in Resources */,
 			);
@@ -291,6 +300,7 @@
 				AC143C232731886A0072DC37 /* StyleFirstScreen.swift in Sources */,
 				ACA24C9A272C1E150062F226 /* CheckMarkButton.swift in Sources */,
 				AC8EEB322732BB2A006BA63D /* FirstBootGameList.swift in Sources */,
+				AC69237D2733E823004D02A8 /* FilterElement.swift in Sources */,
 				AC603A57272821030072A72E /* EventRoot.swift in Sources */,
 				AC29EA7F2732DC2C002EB5DB /* SmallButtonGame.swift in Sources */,
 				ACE5C2F027297E4000CCF4F6 /* GameListComponent.swift in Sources */,
@@ -440,9 +450,11 @@
 				DEVELOPMENT_TEAM = FJ3MN7VN63;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dromspel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -470,9 +482,11 @@
 				DEVELOPMENT_TEAM = FJ3MN7VN63;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dromspel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

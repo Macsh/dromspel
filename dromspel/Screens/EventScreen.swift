@@ -38,12 +38,12 @@ struct EventScreen: View {
                 Text(event.description)
                         .padding()
                         .font(.system(size: 20))
+                        .foregroundColor((colorScheme == .dark ? .white : .black))
                         .overlay(
                             RoundedRectangle(cornerRadius: 12)
                                 .stroke((colorScheme == .dark ? .white : .black), lineWidth: 3)
                                 .opacity(1))
-                        .background(Color.black.opacity(0.5))
-                
+                        .background(Color(colorScheme == .dark ? .black : .white).opacity(0.5))
                         .cornerRadius(12)
                         .padding()
                 Text(event.localisation)
@@ -70,14 +70,14 @@ struct EventScreen: View {
                     } }
 
             }.font(.system(size: 18))
-                .shadow(color: .black, radius: 3)
                 .navigationBarTitle(event.name)
                 .background(
                     Image(event.image)
                         .resizable()
                         .scaledToFill()
                         .clipped()
-                        .frame(width: 700, height: 900)                        .opacity(0.8)
+                        .frame(width: 700, height: 900)
+                        .opacity(0.8)
             )
         }
             //.scaledToFill()

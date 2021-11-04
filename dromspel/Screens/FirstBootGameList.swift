@@ -19,7 +19,7 @@ struct FirstBootGameList: View {
     @State var bindingSearch: String = ""
     @Binding var isValidated: Bool
     @Environment(\.colorScheme) var colorScheme
-    @State var uniqueNumbers: [Int] = getUniqueRandomNumbers(min: 0, max: games.count, count: 8)
+    @State var uniqueNumbers: [Int] = getUniqueRandomNumbers(min: 0, max: games.count-1, count: 8)
 
     var body: some View {
         VStack {
@@ -29,6 +29,7 @@ struct FirstBootGameList: View {
                         .padding()
 
                     SearchBar(binding: $bindingSearch)
+                    
                 }
                 if bindingSearch != "" {
                     ForEach(games) { game in

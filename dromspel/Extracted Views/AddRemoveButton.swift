@@ -49,6 +49,7 @@ struct AddRemoveButton: View {
                     }
                     
                     self.buttonMode.toggle()
+                    User.saveSpecificUserDefault(activeUser.gamesList, forKey: "user.gamesList")
                 }
             })
             .onAppear(perform: {
