@@ -16,7 +16,7 @@ struct TextBubble: View {
             Image("bg-bubble")
                 .resizable()
                 .scaledToFill()
-                .frame(height: 200)
+                .frame(height: 80)
                 .opacity(0.7)
                 .background(Color.black)
                 .clipped()
@@ -31,7 +31,7 @@ struct TextBubble: View {
                 Image("Firstscreen-bg-lightmode")
                     .resizable()
                     .scaledToFill()
-                    .frame(height: 200, alignment: .top)
+                    .frame(height: 80, alignment: .top)
                     .opacity(0.7)
                     .background(Color.black)
                     .clipped()
@@ -45,7 +45,7 @@ struct TextBubble: View {
             HStack{
                 Text (textBubble)
                     .font(.system(size: 17, weight: .bold))
-                    .padding()
+//                    .padding()
                     .multilineTextAlignment(.center)
                 
             }

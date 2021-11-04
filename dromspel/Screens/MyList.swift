@@ -40,11 +40,13 @@ struct MyList: View {
                             ForEach(activeUser.gamesList.reversed() , id: \.self) { gameIndex in
                                 GameListComponent(game : games[gameIndex], activeUser: activeUser)
                             }
+                            .padding(.horizontal, 8)
                         }
                         else {
                             ForEach(activeUser.history.reversed() , id: \.self) { gameIndex in
                                 GameListComponent(game : games[gameIndex], activeUser: activeUser)
                             }
+                            .padding(.horizontal, 8)
                         }
                     }
                 }
