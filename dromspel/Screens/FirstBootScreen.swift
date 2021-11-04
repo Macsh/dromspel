@@ -58,7 +58,7 @@ struct FirstBootScreen: View {
                     Spacer()
                         .frame(height: 50)
                     
-                    NavigationLink (destination:UserForm(), label:{
+                    NavigationLink (destination:UserForm(isValidated: $isValidated, haveButton: true, activeUser: user), label:{
                             ChoiceButtonQuestion()
                                 
                     })
