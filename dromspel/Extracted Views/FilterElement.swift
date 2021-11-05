@@ -71,7 +71,7 @@ struct FilterElement: View {
                         .frame(height: 40)
                         .padding(.horizontal)
                         .opacity(ButtonSelection ? 0.5: 1)
-                        .animation(.easeInOut(duration: 0.25))
+                        .animation(.easeOut(duration: 0.25))
                     
                 })
                 Button(action: {
@@ -91,7 +91,7 @@ struct FilterElement: View {
                         .frame(height: 40)
                         .padding(.horizontal)
                         .opacity(ButtonSelection1 ? 0.5: 1)
-                        .animation(.easeInOut(duration: 0.25))
+                        .animation(.easeOut(duration: 0.25))
                 })
                 Button(action: {
                     if ButtonSelection2 {
@@ -110,7 +110,7 @@ struct FilterElement: View {
                         .frame(height: 40)
                         .padding(.horizontal)
                         .opacity(ButtonSelection2 ? 0.5: 1)
-                        .animation(.easeInOut(duration: 0.25))
+                        .animation(.easeOut(duration: 0.25))
                 })
                 Button(action: {
                     if ButtonSelection3 {
@@ -129,7 +129,7 @@ struct FilterElement: View {
                         .frame(height: 40)
                         .padding(.horizontal)
                         .opacity(ButtonSelection3 ? 0.5: 1)
-                        .animation(.easeInOut(duration: 0.25))
+                        .animation(.easeOut(duration: 0.25))
                 })
                 Button(action: {
                     if ButtonSelection4 {
@@ -148,7 +148,7 @@ struct FilterElement: View {
                         .frame(height: 40)
                         .padding(.horizontal)
                         .opacity(ButtonSelection4 ? 0.5: 1)
-                        .animation(.easeInOut(duration: 0.25))
+                        .animation(.easeOut(duration: 0.25))
                 })
             }
             .padding(.top)
@@ -179,7 +179,7 @@ struct FilterElement: View {
                             .colorInvert()
                             .padding(.horizontal)
                             .opacity(ButtonSelection5 ? 0.5: 1)
-                            .animation(.easeInOut(duration: 0.25))
+                            .animation(.easeOut(duration: 0.25))
                     } else {
                         Image("logo-switch")
                             .resizable()
@@ -187,7 +187,7 @@ struct FilterElement: View {
                             .frame(height: 42)
                             .padding(.horizontal)
                             .opacity(ButtonSelection5 ? 0.5: 1)
-                            .animation(.easeInOut(duration: 0.25))
+                            .animation(.easeOut(duration: 0.25))
                     }
                 })
                 Button(action: {
@@ -208,7 +208,7 @@ struct FilterElement: View {
                         .padding(.horizontal)
                         .foregroundColor(colorScheme == .dark ? .white : .black)
                         .opacity(ButtonSelection6 ? 0.5: 1)
-                        .animation(.easeInOut(duration: 0.25))
+                        .animation(.easeOut(duration: 0.25))
                 })
                 Button(action: {
                     if ButtonSelection7 {
@@ -228,7 +228,7 @@ struct FilterElement: View {
                         .padding(.horizontal)
                         .foregroundColor(colorScheme == .dark ? .white : .black)
                         .opacity(ButtonSelection7 ? 0.5: 1)
-                        .animation(.easeInOut(duration: 0.25))
+                        .animation(.easeOut(duration: 0.25))
                 })
                 Button(action: {
                     if ButtonSelection8 {
@@ -248,7 +248,7 @@ struct FilterElement: View {
                         .padding(.horizontal)
                         .foregroundColor(colorScheme == .dark ? .white : .black)
                         .opacity(ButtonSelection8 ? 0.5: 1)
-                        .animation(.easeInOut(duration: 0.25))
+                        .animation(.easeOut(duration: 0.25))
                 })
             }
             .padding(.top)
