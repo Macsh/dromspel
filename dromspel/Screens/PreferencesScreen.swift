@@ -74,9 +74,14 @@ struct PreferencesScreen: View {
                         SearchBar(binding: $bindingSearch)
                         ScrollView {
                             if bindingSearch != "" {
-                                ForEach(games) { game in
-                                    if game.name.lowercased().contains(bindingSearch.lowercased()) {
-                                        GamePrefComponent(game : game, activeUser: activeUser)
+//                                ForEach(games) { game in
+//                                    if game.name.lowercased().contains(bindingSearch.lowercased()) {
+//                                        GamePrefComponent(game : game, activeUser: activeUser)
+//                                    }
+//                                }
+                                ForEach(activeUser.likedGames.reversed(), id:\.self) { index in
+                                    if games[index].name.lowercased().contains(bindingSearch.lowercased()) {
+                                        GamePrefComponent(game : games[index], activeUser: activeUser)
                                     }
                                 }
                             }
