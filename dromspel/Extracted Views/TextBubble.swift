@@ -16,7 +16,7 @@ struct TextBubble: View {
             Image("bg-bubble")
                 .resizable()
                 .scaledToFill()
-                .frame(height: 80)
+                .frame(height: 80, alignment: .top)
                 .opacity(0.7)
                 .background(Color.black)
                 .clipped()
@@ -66,7 +66,7 @@ struct TextBubble: View {
 struct TextBubble_Previews: PreviewProvider {
     static var previews: some View {
         TextBubble(textBubble : "Ou bien, voici déjà quelques recommandations :")
-//            .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
 
     }
 }

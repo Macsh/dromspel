@@ -39,7 +39,7 @@ struct GameRoot: View {
         self.activeUser = activeUser
         
         self._filteredPegi = State(initialValue: games.filter { game in
-                return pegiEmpty.contains(game.pegi) || self.pegiEmpty.count == 0
+            return pegiEmpty.contains(game.pegi) || self.pegiEmpty.count == 0
         })
         
         self._filteredPlatform = State(initialValue: filteredPegi.filter { game in
@@ -90,61 +90,71 @@ struct GameRoot: View {
                             }
                         }
                     }
-                    }
-                    .navigationBarTitle("Nos Recommandations").navigationBarTitleDisplayMode(.inline).navigationViewStyle(StackNavigationViewStyle())
-                    .toolbar {
-                        ToolbarItemGroup(placement: .navigationBarTrailing) {
+                }
+                .navigationBarTitle("Nos Recommandations").navigationBarTitleDisplayMode(.inline).navigationViewStyle(StackNavigationViewStyle())
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        
+                        Button(action: {
+                            showingSheet.toggle()
                             
-                            Button(action: {
-                                showingSheet.toggle()
-                                
-                            } , label: {
-                                
-                                if colorScheme == .dark {
-                                    Image("funnel-logo")
+                        } , label: {
+                            
+                            if colorScheme == .dark {
+                                Image("funnel-logo")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 30)
                                     .colorInvert()
-                                }
-                                else {
-                                    Image("funnel-logo")
+                            }
+                            else {
+                                Image("funnel-logo")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 30)
-                                }
-                            })
-                                .sheet(isPresented: $showingSheet) {
-                                    FilterElement(showing: $showingSheet,pegiEmpty:$pegiEmpty, typeEmpty:$typeEmpty, platformEmpty:$platformEmpty, ButtonSelection: $ButtonSelection, ButtonSelection1: $ButtonSelection1, ButtonSelection2: $ButtonSelection2, ButtonSelection3: $ButtonSelection3, ButtonSelection4: $ButtonSelection4, ButtonSelection5: $ButtonSelection5, ButtonSelection6: $ButtonSelection6, ButtonSelection7: $ButtonSelection7, ButtonSelection8: $ButtonSelection8, ButtonsType: $ButtonsType)
-                                }
-                            
-                        }
-                        ToolbarItemGroup(placement: .navigationBarLeading) {
-                            
-                            Button(action: {
-                                searchToggle.toggle()
-                            } , label: {
+                            }
+                        })
+                            .sheet(isPresented: $showingSheet) {
+                                FilterElement(showing: $showingSheet,pegiEmpty:$pegiEmpty, typeEmpty:$typeEmpty, platformEmpty:$platformEmpty, ButtonSelection: $ButtonSelection, ButtonSelection1: $ButtonSelection1, ButtonSelection2: $ButtonSelection2, ButtonSelection3: $ButtonSelection3, ButtonSelection4: $ButtonSelection4, ButtonSelection5: $ButtonSelection5, ButtonSelection6: $ButtonSelection6, ButtonSelection7: $ButtonSelection7, ButtonSelection8: $ButtonSelection8, ButtonsType: $ButtonsType)
+                            }
+                        
+                    }
+                    ToolbarItemGroup(placement: .navigationBarLeading) {
+                        
+                        Button(action: {
+                            searchToggle.toggle()
+                        } , label: {
+                            if colorScheme == .dark {
                                 Image(systemName: "magnifyingglass.circle")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 30)
-                                
-                            })
-                        }
+                                    .foregroundColor(.white)
+                            }
+                            else {
+                                Image(systemName: "magnifyingglass.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 30)
+                                    .foregroundColor(.black)
+                            }
+                            
+                        })
                     }
                 }
+            }
             .onChange(of: self.pegiEmpty, perform: { value in
                 self.filteredPegi = games.filter { game in return value.contains(game.pegi) || value.count == 0 }
-                    
-                    self.filteredPlatform = self.filteredPegi.filter { game in
-                        return game.platform.filter({g in
-                            return self.platformEmpty.contains(where: { platform in
-                                return platform == g
-                            }) || self.platformEmpty.count == 0
-                            
-                        }).count > 0
-                    }
-                })
+                
+                self.filteredPlatform = self.filteredPegi.filter { game in
+                    return game.platform.filter({g in
+                        return self.platformEmpty.contains(where: { platform in
+                            return platform == g
+                        }) || self.platformEmpty.count == 0
+                        
+                    }).count > 0
+                }
+            })
             .onChange(of: self.platformEmpty, perform: { value in
                 self.filteredPlatform = self.filteredPegi.filter { game in
                     return game.platform.filter({g in
@@ -164,6 +174,7 @@ struct GameRoot: View {
 struct GameRoot_Previews: PreviewProvider {
     static var previews: some View {
         GameRoot(activeUser: user)
+//            .preferredColorScheme(.dark)
     }
 }
 

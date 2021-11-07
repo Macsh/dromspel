@@ -105,7 +105,7 @@ struct UserForm: View {
                         Button(action: {
                             isValidated = true
                         }, label: {
-                            NextStepButton(textButton: "Etape suivante")
+                            NextStepButton(textButton: "Vous avez fini !")
                         })
                     }
 

@@ -9,7 +9,7 @@ import Foundation
 
 
 var games = [
-        Game(name: "Elden Ring", type: GameType.RPG(value: .actionRPG), date: "25/02/2022", editor: "From Software", video: "E3Huy2cdih0", image: "elden-ring-art-1", description: "Elden Ring est un jeu vidéo d'action-RPG développé par FromSoftware et édité par Bandai Namco Entertainment, issu de la collaboration entre le créateur de jeux vidéo Hidetaka Miyazaki et l'écrivain George R. R. Martin.", platform: ["logo.playstation", "logo.xbox", "desktopcomputer"], pegi: Pegi.pegi_16.rawValue, price: "??.??€"),
+        Game(name: "Elden Ring", type: GameType.RPG(value: .actionRPG), date: "25/02/2022", editor: "From Software", video: "E3Huy2cdih0", image: "elden-ring-art-1", description: "Elden Ring est un jeu vidéo d'action-RPG développé par FromSoftware et édité par Bandai Namco Entertainment, issu de la collaboration entre le créateur de jeux vidéo Hidetaka Miyazaki et l'écrivain George R. R. Martin.", platform: ["logo.playstation", "logo.xbox", "desktopcomputer"], pegi: Pegi.pegi_16.rawValue, price: "69.99€"),
         
         Game(name: "Minecraft", type: GameType.OpenWorld(value: .sandbox), date: "18/11/2011", editor: "Mojang", video: "MmB9b5njVbA", image: "minecraft-game", description: "Minecraft est un jeu vidéo de type aventure « bac à sable » développé par le Suédois Markus Persson, alias Notch, puis par la société Mojang Studios. Il s'agit d'un univers composé de voxels et généré aléatoirement, qui intègre un système d'artisanat axé sur l'exploitation puis la transformation de ressources naturelles (minéralogiques, fossiles, animales et végétales).", platform: ["logo.playstation", "logo.xbox", "logo-switch", "desktopcomputer"], pegi: Pegi.pegi_7.rawValue, price: "20.00€"),
         
