@@ -11,7 +11,7 @@
 ## À Propos du Projet
 
 <p align="center">
-  <img src="./Presensation.gif" alt="Dromspel Gif" />
+  <img src="./Presentation.gif" alt="Dromspel Gif" />
 </p>
 
 Projet réalisé dans le cadre de la formation "Apple Foundation Program".
