@@ -2,10 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Macsh/dromspel/blob/main/dromspel/Assets.xcassets/AppIcon.appiconset/Icon-180.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
+  <img src="dromspel/Assets.xcassets/AppIcon.appiconset/Icon-180.png" alt="Logo" width="80" height="80">
   <h3 align="center">Drömspel</h3>
 </div>
 
@@ -14,7 +11,7 @@
 ## À Propos du Projet
 
 <p align="center">
-  <img src="Presensation.gif" alt="Dromspel Gif" />
+  <img src="./Presensation.gif" alt="Dromspel Gif" />
 </p>
 
 Projet réalisé dans le cadre de la formation "Apple Foundation Program".
