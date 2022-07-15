@@ -2,7 +2,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="dromspel/Assets.xcassets/AppIcon.appiconset/Icon-180.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Macsh/dromspel/blob/main/dromspel/Assets.xcassets/AppIcon.appiconset/Icon-180.png">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
   <h3 align="center">Drömspel</h3>
 </div>
@@ -11,9 +13,9 @@
 <!-- ABOUT THE PROJECT -->
 ## À Propos du Projet
 
-<div align="center">
-![Dromspel Gif][dromspel-gif]
-</div>
+<p align="center">
+  <img src="Presensation.gif" alt="Dromspel Gif" />
+</p>
 
 Projet réalisé dans le cadre de la formation "Apple Foundation Program".
 
@@ -29,8 +31,3 @@ Le but étant d'avoir une application qui enregistre les préférences utilisate
 Ce projet a été codé en Swift/SwiftUI.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[dromspel-gif]: Presentation.gif
-
